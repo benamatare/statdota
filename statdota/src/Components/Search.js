@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
-import { setGlobalAccountQuery } from '../actions.js';
+import { setGlobalAccountQuery, fetchAccounts } from '../actions.js';
 import { bindActionCreators } from 'redux';
 
 class Search extends Component {
-
   state = {
     account_query: "",
   }
+
+
+
 
   handleQuery = e => {
       this.setState({
@@ -19,6 +21,7 @@ class Search extends Component {
   handleQuerySubmit = e => {
     e.preventDefault();
     this.props.setQuery(this.state.account_query)
+    this.props.getAccounts(this.state.account_query)
   }
 
   render() {
@@ -41,8 +44,12 @@ class Search extends Component {
 
 }
 
+
+
 const mapDispatchToProps = dispatch => {
-  return bindActionCreators({setQuery: setGlobalAccountQuery}, dispatch)
+  return (bindActionCreators({
+    setQuery: setGlobalAccountQuery,
+    getAccounts: fetchAccounts}, dispatch))
 }
 
 export default connect(null, mapDispatchToProps)(Search);
