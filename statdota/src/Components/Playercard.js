@@ -78,7 +78,7 @@ export default class Playercard extends Component {
       <div>
         hi there
         <p> Account ID: { this.state.account_id } </p>
-        <p> { this.state.}</p>
+        <p> </p>
         {/* Account Recent Matches: { this.fetchAccountRecentMatches } */}
         {/* Account Matches: { this.fetchAccountMatches } */}
         {/* Account Heroes: { this.fetchAccountHeroes } */}

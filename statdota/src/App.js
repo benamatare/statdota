@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import Main from './Components/Main.js';
+import AccountsContainer from './Components/AccountsContainer.js';
 
 
 export default class App extends Component {
@@ -9,7 +9,7 @@ export default class App extends Component {
     return (
       <div className="main-container">
           hello
-          <Main />
+          <AccountsContainer />
 
       </div>
     );

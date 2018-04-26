@@ -1,8 +1,15 @@
-  let fetchPlayersFromApi = search_player_input => {
-    return(
-      type: 'FETCH_PLAYERS',
-      payload: {
-        search_player_input: search_player_input
-      }
-    )
+
+  export function fetchAccountInfo() {
+    return (dispatch) => {
+      dispatch({ type: 'FETCH_ACCOUNTS' });
+      return fetch(`https://api.opendota.com/api/search?q=${this.state.account_query}`)
+        .then(res => res.json())
+        .then(json => dispatch({ type: 'ADD_ACCOUNTS', payload: json }))
+    }
+  }
+
+
+
+  export function setGlobalAccountQuery(account_query) {
+    return { type: 'SET_ACCOUNT_QUERY', payload: account_query}
   }
