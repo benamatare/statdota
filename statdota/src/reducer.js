@@ -1,9 +1,7 @@
 
   const defaultState = {
     account_query: "",
-    account_id: "",
     accounts: [],
-    loading: false,
     account: {
       account_id: "",
       account_info: {},
@@ -19,12 +17,6 @@
 
 export function rootReducer(state = defaultState, action)  {
     switch (action.type) {
-      case 'FETCH_ACCOUNTS':
-        return {...state,
-          loading: {
-          ...!state.loading
-          }
-        }
       case 'ADD_ACCOUNTS':
         return {...state,
           accounts: action.payload
@@ -35,8 +27,16 @@ export function rootReducer(state = defaultState, action)  {
          }
        case 'SET_ACCOUNT_ID':
         return {...state,
-          account_id: action.payload
+            account: {...state.account,
+              account_id: action.payload
+            }
         }
+        case 'SET_ACCOUNT_INFO':
+          return {...state,
+            account: {...state.account,
+              account_info: action.payload
+            }
+          }
       default:
         return state;
     }

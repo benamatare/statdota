@@ -1,13 +1,4 @@
 
-  export function fetchAccountInfo(query_id) {
-    return (dispatch) => {
-      dispatch({ type: 'FETCH_ACCOUNTS' });
-      return fetch(`https://api.opendota.com/api/search?q=${query_id}`)
-        .then(res => res.json())
-        .then(json => dispatch({ type: 'ADD_ACCOUNTS', payload: json }))
-    }
-  }
-
 
   export function setGlobalAccountQuery(account_query) {
     return { type: 'SET_ACCOUNT_QUERY', payload: account_query}
@@ -27,16 +18,27 @@
     }
   }
 
- //  fetchAccountInfo = () => {
- //   fetch(`https://api.opendota.com/api/players/${this.state.account_id}`)
- //     .then(res => res.json())
- //     .then(json => {
- //       this.setState({
- //         account_info: json,
- //       })
- //     }
- //   )
- // }
+
+  export function fetchAccountInfo(account_id) {
+    return (dispatch) => {
+      dispatch({ type: 'FETCH_ACCOUNTS' });
+      return fetch(`https://api.opendota.com/api/players/${account_id}`)
+        .then(res => res.json())
+        .then(json => dispatch({ type: 'SET_ACCOUNT_INFO', payload: json }))
+      }
+  }
+
+
+
+// do 5 fetches
+// set the result of those to keys inside data
+//   send data to reducer as payload
+//   build an objet that has everything that i fucking need to send over
+//
+// }
+
+
+ //
  //
  //  fetchAccountRecentMatches = () => {
  //   fetch(`https://api.opendota.com/api/players/${this.state.account_id}/recentMatches`)

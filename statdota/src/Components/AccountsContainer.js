@@ -1,17 +1,14 @@
-import React, { Component } from 'react';
-
+import React from 'react';
 import { connect } from 'react-redux';
-import { fetchAccountInfo } from '../actions.js';
+import { fetchAccounts } from '../actions.js';
 import { bindActionCreators } from 'redux';
-
 import AccountCard from './AccountCard.js';
 import Search from './Search.js';
-
 import './AccountsContainer.css';
 
 
   const AccountsContainer = props => {
-    console.log('Props in AccountsContainer are: ', props)
+    // console.log('Props in AccountsContainer are: ', props)
     const renderAccountCards = () => {
       var accounts = Object.values(props.accounts)
         return accounts.map(account => <AccountCard
@@ -19,7 +16,6 @@ import './AccountsContainer.css';
           account={ account }
       />)
     }
-
     return(
       <div>
         <div>
@@ -38,12 +34,10 @@ import './AccountsContainer.css';
       accounts: state.accounts
     }
   }
-
   const mapDispatchToProps = dispatch => {
     return {
-      getAccounts: bindActionCreators(fetchAccountInfo, dispatch),
+      getAccounts: bindActionCreators(fetchAccounts, dispatch)
     }
   }
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(AccountsContainer);

@@ -9,13 +9,10 @@ class Search extends Component {
     account_query: "",
   }
 
-
-
-
   handleQuery = e => {
       this.setState({
         account_query: e.target.value
-      }, () => { console.log(this.state.account_query) })
+      })
   }
 
   handleQuerySubmit = e => {
@@ -25,7 +22,6 @@ class Search extends Component {
   }
 
   render() {
-    console.log(this.props)
     return(
       <div>
        <form onSubmit={ this.handleQuerySubmit }>
