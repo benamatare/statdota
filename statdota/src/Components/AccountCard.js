@@ -1,20 +1,24 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchAccountInfo, setGlobalAccountId } from '../actions.js';
+import { setLoadFlag, setAccountId, fetchAccountInfo, fetchAccountRecentMatches, fetchAccountMatches, fetchAccountHeroes, fetchAccountWinLoss, fetchAccountFriends } from '../actions.js';
 import { bindActionCreators } from 'redux';
 import './AccountCard.css';
 
-
 const AccountCard = props => {
-  console.log('Props in AccountCard are: ', props);
-
+  // console.log('Props in AccountCard are: ', props);
   const handleClick = e => {
-    props.getAccountInfo(props.account.account_id)
+    e.preventDefault();
+    props.setLoadFlag()
     props.setAccountId(props.account.account_id)
+    props.getAccountInfo(props.account.account_id)
+    props.getAccountRecentMatches(props.account.account_id)
+    props.getAccountMatches(props.account.account_id)
+    props.getAccountHeroes(props.account.account_id)
+    props.getAccountWinLoss(props.account.account_id)
+    props.getAccountFriends(props.account.account_id)
+
     console.log('You clicked card:', props.account.account_id);
   }
-
-
 
   return (
     <div
@@ -39,7 +43,16 @@ const AccountCard = props => {
   }
 
   const mapDispatchToProps = dispatch => {
-    return bindActionCreators({getAccountInfo: fetchAccountInfo, setAccountId: setGlobalAccountId},dispatch)
+    return bindActionCreators({
+      setAccountId: setAccountId,
+      setLoadFlag: setLoadFlag,
+      getAccountInfo: fetchAccountInfo,
+      getAccountRecentMatches: fetchAccountRecentMatches,
+      getAccountMatches: fetchAccountMatches,
+      getAccountHeroes: fetchAccountHeroes,
+      getAccountWinLoss: fetchAccountWinLoss,
+      getAccountFriends: fetchAccountFriends
+    },dispatch)
 
   }
 

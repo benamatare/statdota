@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
-import { setGlobalAccountQuery, fetchAccounts } from '../actions.js';
+import { setLoadFlag, setGlobalAccountQuery, fetchAccounts } from '../actions.js';
 import { bindActionCreators } from 'redux';
 
 class Search extends Component {
@@ -17,6 +17,7 @@ class Search extends Component {
 
   handleQuerySubmit = e => {
     e.preventDefault();
+    this.props.setLoadFlag()
     this.props.setQuery(this.state.account_query)
     this.props.getAccounts(this.state.account_query)
   }
@@ -42,10 +43,13 @@ class Search extends Component {
 
 
 
+
 const mapDispatchToProps = dispatch => {
-  return (bindActionCreators({
+  return bindActionCreators({
     setQuery: setGlobalAccountQuery,
-    getAccounts: fetchAccounts}, dispatch))
+    getAccounts: fetchAccounts,
+    setLoadFlag: setLoadFlag
+  }, dispatch)
 }
 
 export default connect(null, mapDispatchToProps)(Search);

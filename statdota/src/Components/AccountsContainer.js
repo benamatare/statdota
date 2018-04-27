@@ -3,12 +3,13 @@ import { connect } from 'react-redux';
 import { fetchAccounts } from '../actions.js';
 import { bindActionCreators } from 'redux';
 import AccountCard from './AccountCard.js';
+import AccountPage from './AccountPage.js';
 import Search from './Search.js';
 import './AccountsContainer.css';
 
 
   const AccountsContainer = props => {
-    // console.log('Props in AccountsContainer are: ', props)
+    console.log('Props in AccountsContainer are: ', props)
     const renderAccountCards = () => {
       var accounts = Object.values(props.accounts)
         return accounts.map(account => <AccountCard
@@ -18,6 +19,7 @@ import './AccountsContainer.css';
     }
     return(
       <div>
+        { props.account_clicked ? <AccountPage /> : null }
         <div>
           <Search />
         </div>
@@ -31,6 +33,7 @@ import './AccountsContainer.css';
 
   const mapStateToProps = state => {
     return {
+      account_clicked: state.account_clicked,
       accounts: state.accounts
     }
   }
