@@ -9,7 +9,7 @@ import './AccountsContainer.css';
 
 
   const AccountsContainer = props => {
-    console.log('Props in AccountsContainer are: ', props)
+    // console.log('Props in AccountsContainer are: ', props)
     const renderAccountCards = () => {
       var accounts = Object.values(props.accounts)
         return accounts.map(account => <AccountCard
@@ -21,10 +21,10 @@ import './AccountsContainer.css';
       <div>
         { props.account_clicked ? <AccountPage /> : null }
         <div>
-          <Search />
+          {!props.account_clicked ? <Search /> : null }
         </div>
         <div>
-          { renderAccountCards() }
+          { !props.account_clicked ? renderAccountCards() : null }
         </div>
       </div>
 

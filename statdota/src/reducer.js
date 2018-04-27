@@ -3,6 +3,7 @@
     account_query: "",
     account_clicked: false,
     loaded: false,
+    error: "",
     accounts: [],
     account: {
       account_id: "",
