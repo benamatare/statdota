@@ -1,45 +1,16 @@
-.main-container {
-  text-align: center;
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.account-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: right;
+  width: 70%;
+  float:right;
 }
-
-.App-header {
-  background-color: #222;
-  height: 1%;
-  padding: 1%;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-@media screen and (max-width: 600px) {
-    .column {
-        width: 100%;
-    }
-}
-
-.column {
-    float: left;
-    width: 33.33%;
-}
-
-/* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
+body {
+  overflow: auto;
+  margin: 0;
 }

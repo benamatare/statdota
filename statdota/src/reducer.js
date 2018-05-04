@@ -1,10 +1,13 @@
 
   const defaultState = {
     account_query: "",
+    live: [],
     account_clicked: false,
     loaded: false,
     error: "",
     accounts: [],
+    final_fetch_flag: false,
+    last_fetch_hit: false,
     account: {
       account_id: "",
       account_info: {},
@@ -13,13 +16,36 @@
       account_heroes: [],
       account_w_l: {},
       account_friends: [],
+      matches:[],
     }
   }
 
-
 export function rootReducer(state = defaultState, action)  {
   switch (action.type) {
-
+    case 'SET_LIVE_STATUS':
+      return {...state,
+        live: action.payload
+      }
+    case 'GET_MATCH_ID_DATA':
+      return {...state,
+        account: {...state.account,
+          matches: action.payload
+        }
+      }
+    case 'GET_MATCH_DATA':
+      return {...state,
+      account: {...state.account,
+        match: action.payload
+      }
+    }
+    case 'SET_ACCOUNT_CLICKED':
+      return {...state,
+        account_clicked: false
+      }
+    case 'FINAL_FETCH_FLAG':
+      return {...state,
+        final_fetch_flag: true
+      }
     case 'SET_ACCOUNT_ID':
       return {...state,
         account_clicked: !state.account_clicked,
@@ -29,56 +55,52 @@ export function rootReducer(state = defaultState, action)  {
       }
     case 'LOAD_DATA_FLAG':
       return {...state,
-    loaded: {...!state.loaded}
+        loaded: !state.loaded,
     }
     case 'ADD_ACCOUNTS':
       return {...state,
-        loaded: true,
+        loaded: !state.loaded,
         accounts: action.payload
       }
     case 'SET_ACCOUNT_QUERY':
       return {...state,
-        loaded: true,
         account_query: action.payload
       }
     case 'SET_ACCOUNT_INFO':
       return {...state,
-        loaded: true,
         account: {...state.account,
           account_info: action.payload
         }
       }
     case 'SET_ACCOUNT_RECENT_MATCHES':
       return {...state,
-        loaded: true,
+
         account: {...state.account,
           account_recent_matches: action.payload
         }
       }
     case 'SET_ACCOUNT_MATCHES':
       return {...state,
-        loaded: true,
+        last_fetch_hit: !state.last_fetch_hit,
         account: {...state.account,
           account_matches: action.payload
         }
       }
     case 'SET_ACCOUNT_HEROES':
       return {...state,
-        loaded: true,
         account: {...state.account,
           account_heroes: action.payload
         }
       }
     case 'SET_ACCOUNT_W_L':
       return {...state,
-        loaded: true,
         account: {...state.account,
           account_w_l: action.payload
         }
       }
     case 'SET_ACCOUNT_FRIENDS':
       return {...state,
-        loaded: true,
+        loaded: !state.loaded,
         account: {...state.account,
           account_friends: action.payload
         }

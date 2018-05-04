@@ -1,4 +1,14 @@
+  export function setAccountClicked() {
+    return {
+      type: 'SET_ACCOUNT_CLICKED'
+    }
+  }
 
+  export function getMatchIds(matches) {
+    return matches.slice(0,10).map(match => {
+      return match.match_id
+    })
+  }
 
   export function setGlobalAccountQuery(account_query) {
     return {
@@ -15,6 +25,20 @@
     return {
       type: 'LOAD_DATA_FLAG'
     }
+  }
+
+  export function finalFetchFlag() {
+    return {
+      type: 'FINAL_FETCH_FLAG'
+    }
+  }
+  export function fetchMatchData(match_id) {
+    return (dispatch) => {
+      dispatch({ type: 'LOAD_DATA_FLAG' });
+      return fetch(`https://api.opendota.com/api/matches/${match_id}`)
+        .then(res => res.json())
+        .then(json => dispatch({ type: 'GET_MATCH_DATA', payload: json }))
+      }
   }
 
   export function fetchAccounts(query_id) {
@@ -60,6 +84,7 @@
          .then(json => dispatch({ type: 'SET_ACCOUNT_HEROES', payload: json }))
        }
      }
+
      export function fetchAccountWinLoss(account_id) {
        return (dispatch) => {
         dispatch({ type: 'LOAD_DATA_FLAG' });
@@ -76,3 +101,12 @@
            .then(json => dispatch({ type: 'SET_ACCOUNT_FRIENDS', payload: json }))
          }
        }
+
+       export function fetchLive() {
+         return (dispatch) => {
+          dispatch({ type: 'LOAD_DATA_FLAG' });
+          return fetch(`https://api.stratz.com/api/v1/Hero`)
+            .then(res => res.json())
+            .then(json => dispatch({ type: 'SET_LIVE_STATUS', payload: json }))
+          }
+        }

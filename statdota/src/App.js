@@ -1,19 +1,57 @@
-import React, { Component } from 'react';
+// React & Redux
+import React from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+// import { DotLoader } from 'react-spinners';
+// Componenets / Containers / Actions
+import { fetchAccounts } from './actions.js';
+import AccountCard from './Components/AccountCard.js';
+import AccountPage from './Components/AccountPage.js';
+import Searchbar from './Components/Searchbar.js';
+import Header from './Components/Header.js';
+import LiveTracker from './Components/LiveTracker.js';
+// Styling
 import './App.css';
-// import { BrowserRouter as Router, Route } from 'react-router-dom';
-import AccountsContainer from './Components/AccountsContainer.js';
 
+const App = props => {
 
-export default class App extends Component {
-  render() {
-    return (
-      <div className="main-container">
-        <div className="row">
-          <div className="column"> hellos </div>
-          <div className="column"> <AccountsContainer /> </div>
-          <div className="column"> column 3 </div>
-        </div>
+  const renderAccountCards = () => {
+    var accounts = Object.values(props.accounts)
+      return accounts.map(account => <AccountCard key={account.account_id} account={account}/>)
+  }
+
+//Render to the page <--
+  return (
+    <div className="app-div">
+      <Header />
+      {/* <Searchbar /> */}
+      <h1>120652372</h1>
+      <LiveTracker />
+      <div className="account-page-container" style={{ paddingBottom: 4 }}>
+        {props.last_fetch_hit === true && props.account_clicked === true ? <AccountPage /> : null}
       </div>
-    );
+      <div className="account-cards-container">
+        {!props.account_clicked ? renderAccountCards() : null }
+      </div>
+
+
+    </div>
+  )
+}
+
+
+const mapStateToProps = state => {
+  return {
+    account_clicked: state.account_clicked,
+    final_fetch_flag: state.final_fetch_flag,
+    last_fetch_hit: state.last_fetch_hit,
+    accounts: state.accounts
   }
 }
+const mapDispatchToProps = dispatch => {
+  return {
+    getAccounts: bindActionCreators(fetchAccounts, dispatch)
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
