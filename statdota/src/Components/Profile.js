@@ -59,9 +59,16 @@ const Profile = props => {
               PROP_CHECK.profile ?  <div className="profile-text">
                   <h1 style={{margin: 1}}>{props.account.account_info.profile.personaname}</h1>
                   <p style={{margin: 1}}> {ranks[props.account.account_info.rank_tier].name}</p>
-                  <img src={ranks[props.account.account_info.rank_tier].rank_icon} alt="rank-icon-img"/>
+                  <img src={ranks[props.account.account_info.rank_tier].rank_stars}/>
+                  <img src={ranks[props.account.account_info.rank_tier].rank_icon}/>
                 </div> : null
               }/>
+              <div className="profile-rank-image">
+                <Paper
+                  className="rank-image-paper"
+                />
+
+              </div>
           <div className="profile-stats">
             <Paper
               className="profile-paper"
@@ -142,6 +149,7 @@ const Profile = props => {
         </div>
     </div>
   )}
+
   const mapStateToProps = state => {
     return {
       account: state.account,
