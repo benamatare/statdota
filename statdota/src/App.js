@@ -7,19 +7,16 @@ import { bindActionCreators } from 'redux';
 import { fetchAccounts } from './actions.js';
 import AccountCard from './Components/AccountCard.js';
 import AccountPage from './Components/AccountPage.js';
-import Searchbar from './Components/Searchbar.js';
 import Header from './Components/Header.js';
 import LiveTracker from './Components/LiveTracker.js';
 // Styling
 import './App.css';
 
 const App = props => {
-
   const renderAccountCards = () => {
     var accounts = Object.values(props.accounts)
       return accounts.map(account => <AccountCard key={account.account_id} account={account}/>)
   }
-
 //Render to the page <--
   return (
     <div className="app-div">
@@ -36,8 +33,55 @@ const App = props => {
 
 
     </div>
-  )
-}
+//   <div style={{width: 300, marginBottom: 20}}>
+//     <Table
+//       style={{tableLaylout: 'auto'}}
+//       selectable={false}
+//       multiSelectable={false}
+//       bodyStyle={{height: 'auto', textAlign: 'left'}}
+//       headerStyle={{}}
+//       // wrapperStyle={{}}
+//       height={'300px'}>
+//       <TableHeader
+//         displaySelectAll={false}
+//         adjustForCheckbox={false}
+//         enableSelectAll={false}
+//         style={{
+//           display: 'flex',
+//           flexDirection: 'row',
+//           justifyContent: 'space-between',
+//           textAlign: 'center',
+//           textTransform: 'uppercase',
+//           fontWeight: 500
+//         }}>
+//         <TableRow
+//           displayRowCheckbox={false}
+//           style={{
+//             padding: 0,
+//           }}>
+//           <TableHeaderColumn>Hero</TableHeaderColumn>
+//           <TableHeaderColumn>Games Played</TableHeaderColumn>
+//           <TableHeaderColumn>kills</TableHeaderColumn>
+//         </TableRow>
+//       </TableHeader>
+//       <TableBody
+//         displayRowCheckbox={false}
+//         deselectOnClickaway={false}
+//         showRowHover={false}
+//         stripedRows={false}>
+//         <TableRow>
+//           <TableRowColumn> Storm Spirit </TableRowColumn>
+//           <TableRowColumn> 834 </TableRowColumn>
+//         </TableRow>
+//         <TableRow>
+//           <TableRowColumn> Ember Spirit </TableRowColumn>
+//           <TableRowColumn> 89 </TableRowColumn>
+//         </TableRow>
+//       </TableBody>
+//     </Table>
+// </div>
+
+    )}
 
 
 const mapStateToProps = state => {

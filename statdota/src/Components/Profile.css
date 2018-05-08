@@ -6,19 +6,41 @@
   padding-left: 10%;
   padding-right: 10%;
   padding-top: 5%;
+  padding-bottom: 5%;
+  width: max-content;
+  margin: auto;
+}
+.profile-text {
+  margin-left: 11px;
+  margin-right: 11px;
 }
 
 .top-container {
   display: flex;;
   flex-direction: row;
+  width: max-content;
+  align-items: inherit;
 }
 .img-container {
   display: flex;
   flex-direction: column;
   -webkit-box-pack: center;
   justify-content: center;
-  padding-right: 12px;
+  padding-right: 7%;
 }
+.rank-img-container {
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding-left: 7%;
+}
+/* .profile-rank-image {
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+} */
 
 .profile-paper {
   margin: 2px;
@@ -50,6 +72,9 @@ margin: auto;
 }
 
 .profile-avatar {
+  margin: 0px !important;
+}
+.profile-rank {
   margin: 0px !important;
 }
 

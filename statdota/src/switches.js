@@ -14,15 +14,15 @@ export function matchSkillLevel(match_skill_id){
 export function laneRole(lane_id){
   switch (lane_id) {
     case 1:
-      return " / Safelane"
+      return "Safelane"
     case 2:
-      return "/ Mid"
+      return "Mid"
     case 3:
-      return "/ Offlane"
+      return "Offlane"
     case 4:
-      return "/ Support"
+      return "Support"
     case 5:
-      return "/ Support"
+      return "Support"
     case null:
       return ""
     default:

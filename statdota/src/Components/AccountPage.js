@@ -3,14 +3,17 @@ import { connect } from 'react-redux';
 import TimeAgo from 'react-timeago'
 import { DotLoader } from 'react-spinners';
 
-import RecentMatches from './RecentMatches.js';
-import Friends from './Friends.js';
-import HeroesPlayed from './HeroesPlayed.js';
-import Analytics from './Analytics.js';
 import Profile from './Profile.js';
-import Matches from './Matches.js';
-import Heroes from './Heroes.js';
+import Heroes from '../ComponentTabs/Heroes.js';
+import HeroesPlayed from '../ComponentTabs/HeroesPlayed.js';
+import Matches from '../ComponentTabs/Matches.js';
+import RecentMatches from '../ComponentTabs/RecentMatches.js';
+import Friends from '../ComponentTabs/Friends.js';
+import RecentFriends from '../ComponentTabs/RecentFriends.js';
+import Analytics from './Analytics.js';
 import MatchAnalytics from './MatchAnalytics.js';
+
+
 
 import './AccountPage.css';
 import { Tabs, Tab } from 'material-ui/Tabs';
@@ -23,34 +26,49 @@ const AccountPage = props => {
     <div> {props.final_fetch_flag ?
       <div className="account-page">
         <Profile />
-          <Tabs
-            style={{
-              padding: '5%'
-              // paddingTop: '5%',
-              // paddingBottom: '5%'
-            }}>
-            <Tab label="Overview" style={{background:'#3e3e3e'}}>
-              <div style={{display: 'flex'}}>
-              <div><h1>Top Heroes</h1></div>
-              <HeroesPlayed />
-              <div><h1>Recent Matches</h1></div>
-              <RecentMatches />
-              <div><h1>Friends</h1></div>
-              <Friends />
+          <Tabs style={{marginLeft: '15%', marginRight: '13.5%'}}>
+            <Tab label="Overview" style={{background:'blue'}}>
+              <div className="overview-container">
+                <div className="item1">
+                <RecentMatches />
+                </div>
+                <div className="item2">
+                <HeroesPlayed />
+                <div style={{paddingTop: 20}}>
+                <RecentFriends />
+                </div>
+              </div>
               </div>
             </Tab>
-            <Tab label="Matches"   style={{background:'#3e3e3e'}}>
-              {/* <Matches /> */}
-              {/* {props.final_fetch_flag ? <Matches /> : <DotLoader />} */}
+            <Tab label="Matches" style={{background:'yellow'}}>
+              <div>
+                <Matches />
+              </div>
             </Tab>
-            <Tab label="Heroes"   style={{background:'#3e3e3e'}}>
-                <h1>display all heroes here as a fucking table</h1>
-                <Heroes />
+            <Tab label="Heroes" style={{background:'red'}}>
+                <div>
+                  <Heroes />
+                </div>
             </Tab>
-            <Tab label="Analytics"   style={{background:'#3e3e3e'}}>
-                <h1>display some charts or some shit here</h1>
+            <Tab label="Analytics" style={{background:'red'}}>
+              <div>
                 <MatchAnalytics />
-                {/* <Analytics /> */}
+                <Analytics />
+              </div>
+            </Tab>
+            <Tab label="Pros" style={{background:'red'}}>
+
+            </Tab>
+            <Tab label="Friends" style={{background:'red'}}>
+              <div>
+                <Friends />
+              </div>
+            </Tab>
+            <Tab label="Records" style={{background:'red'}}>
+
+            </Tab>
+            <Tab label="Totals" style={{background:'red'}}>
+
             </Tab>
         </Tabs>
       </div> : <DotLoader />}

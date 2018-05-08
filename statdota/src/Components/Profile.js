@@ -57,18 +57,10 @@ const Profile = props => {
               zDepth={4}
               children ={
               PROP_CHECK.profile ?  <div className="profile-text">
-                  <h1 style={{margin: 1}}>{props.account.account_info.profile.personaname}</h1>
-                  <p style={{margin: 1}}> {ranks[props.account.account_info.rank_tier].name}</p>
-                  <img src={ranks[props.account.account_info.rank_tier].rank_stars}/>
-                  <img src={ranks[props.account.account_info.rank_tier].rank_icon}/>
+                  {props.account.account_info.profile.personaname ? <h1 style={{margin: 1}}>{props.account.account_info.profile.personaname}</h1> : null}
+                  {props.account.account_info.rank_tier ? <p style={{margin: 1}}> {ranks[props.account.account_info.rank_tier].name}</p> : null}
                 </div> : null
               }/>
-              <div className="profile-rank-image">
-                <Paper
-                  className="rank-image-paper"
-                />
-
-              </div>
           <div className="profile-stats">
             <Paper
               className="profile-paper"
@@ -146,6 +138,32 @@ const Profile = props => {
             }/>
             </div>
           </div>
+          <div className="rank-img-container">
+            <Paper
+              className="profile-rank"
+              style={{backgroundColor: 0, position: 'relative', margin:0, height:180, width:180}}
+              rounded={false}
+              zDepth={0}
+              children ={
+                PROP_CHECK.profile ?
+                <div style={{}}>
+                  <Avatar className="stars-avatar" style={{backgroundColor: 0, position: 'absolute', borderRadius: 0, height:'100%', width:'100%'}} src={ranks[props.account.account_info.rank_tier].rank_stars}/>
+                  <Avatar className="rank-avatar" style={{backgroundColor: 0, position: 'absolute', borderRadius: 0, height:'100%', width:'100%'}} src={ranks[props.account.account_info.rank_tier].rank_icon}/>
+                </div>: null }/>
+          </div>
+          {/* <div className="profile-rank-image">
+                <Paper
+                  className="rank-paper"
+                  rounded={false}
+                  zDepth={4}
+                  children ={
+                  PROP_CHECK.profile ? <div className="profile-rank">
+                    <img src={}/>
+                    <img src={ranks[props.account.account_info.rank_tier].rank_icon}/>
+                  </div> : null
+                  }/>
+          </div> */}
+
         </div>
     </div>
   )}
