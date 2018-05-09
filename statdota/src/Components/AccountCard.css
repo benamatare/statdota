@@ -1,6 +1,60 @@
-.cards {
+.cards-container {
+  /* margin-left: 5%; */
+  /* margin-right: 5%; */
+}
+.card {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-space-between;
-  background-color: #757575;
+  /* background-color: #757575; */
+}
+
+.paper-container {
+  padding-left: 7px;
+  margin:auto;
+  justify-content:flex-start;
+  display: flex;
+}
+.card-paper {
+  background-color: #252525 !important;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2), 0 4px 30px 0 rgba(0, 0, 0, 0.19) !important;
+  height: 65px;
+  white-space: nowrap;
+  width: 195px;
+  vertical-align: text-top !important;
+  padding: 4px;
+  margin: 4px;
+  text-align: left !important;
+  display: inline-block !important;
+}
+.card-avatar {
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  float: left ;
+  height: auto !important;
+  width: 50px;
+  border-radius: 0px !important;
+  /* display: inline-block !important; */
+}
+.card-avatar-container {
+  padding-top: 8px;
+  display: block !important;
+  /* white-space: nowrap; */
+}
+.card-account-name {
+  font-size: 16px;
+  font-weight: 400 !important;
+  /* text-align: center; */
+  margin-left: 5px;
+  margin-bottom: 0px;
+}
+
+.card-account-id {
+  font-size: 12px;
+  color: #FA0013;
+  font-weight: 100 !important;
+  /* text-align: center; */
+  margin-left: 5px;
+  margin-top: 1px;
 }

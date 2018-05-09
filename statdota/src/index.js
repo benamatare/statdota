@@ -11,18 +11,16 @@ import registerServiceWorker from './registerServiceWorker';
 import App from './App';
 // Styling
 import './index.css';
-import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
+import { customMuiTheme } from './customMuiTheme.js';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
   const store = createStore(rootReducer, compose(applyMiddleware(thunk),
      window.devToolsExtension ? window.devToolsExtension() : f => f
    ))
-   // console.log('Store is:', store);
-   // console.log('Global State is:', store.getState());
 
 ReactDOM.render(
-  <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
+  <MuiThemeProvider muiTheme={getMuiTheme(customMuiTheme)}>
     <Provider store={store}>
       <Router>
             <Switch>

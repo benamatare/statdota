@@ -2,19 +2,28 @@ import React from 'react';
 import { connect } from 'react-redux';
 import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table';
 import './Friends.css';
+import { Card, CardHeader } from 'material-ui/Card';
 
 const Friends = props => {
   console.log(props);
     return (
       <div className="outer-container">
-        <div style={{marginTop: 15, marginBottom: 15}}>
-          <span className="header-text">
-            Friends Played With
-          </span>
+        <div style={{marginTop: 15, marginBottom: 15, width: 'fit-content'}}>
+          <Card zDepth={0}
+            style={{backgroundColor: '#1f1f1f00'}}
+            rounded={false}
+            children={
+              <div className="header-text" style={{marginLeft: 15, marginRight: 15}}>
+              <i style={{marginRight: 5, color: '#FA0013'}} className="material-icons">label_outline</i>
+              <h1 style={{fontSize: 25}}>Friends Played With</h1>
+              </div>
+            }>
+          </Card>
         </div>
         <div className="outside-container">
           <div className="inner-container">
           <Table
+            style={{overflow: 'hidden'}}
             className="edit-me"
             selectable={false}
             multiSelectable={false}>
@@ -27,29 +36,29 @@ const Friends = props => {
               textTransform: 'uppercase',
               fontWeight: 500
             }}>
-            <TableRow>
-              <TableHeaderColumn tooltip="Player name" tooltipStyle={{top: -5}}>
+            <TableRow className="table-row-header">
+              <TableHeaderColumn className="friends-header" tooltip="Player name" tooltipStyle={{top: -5}}>
                 <div className="header-info-small" style={{fontSize: 12}}> PLAYER </div>
               </TableHeaderColumn>
-              <TableHeaderColumn tooltip="Games played with" tooltipStyle={{top: -5}}>
+              <TableHeaderColumn className="friends-header" tooltip="Games played together" tooltipStyle={{top: -5}}>
                   <div className="header-info-small" style={{fontSize: 12}}> GP </div>
               </TableHeaderColumn>
-              <TableHeaderColumn tooltip="Winrate with" tooltipStyle={{top: -5}}>
+              <TableHeaderColumn className="friends-header" tooltip="Games with" tooltipStyle={{top: -5}}>
                   <div className="header-info-small" style={{fontSize: 12}}> GAMES WITH </div>
               </TableHeaderColumn>
-              <TableHeaderColumn tooltip="Winrate with" tooltipStyle={{top: -5}}>
+              <TableHeaderColumn className="friends-header" tooltip="Winrate with" tooltipStyle={{top: -5}}>
                   <div className="header-info-small" style={{fontSize: 12}}> WIN WITH % </div>
               </TableHeaderColumn>
-              <TableHeaderColumn tooltip="Winrate with" tooltipStyle={{top: -5}}>
+              <TableHeaderColumn className="friends-header" tooltip="Games against" tooltipStyle={{top: -5}}>
                   <div className="header-info-small" style={{fontSize: 12}}> AGAINST </div>
               </TableHeaderColumn>
-              <TableHeaderColumn tooltip="Winrate with" tooltipStyle={{top: -5}}>
+              <TableHeaderColumn className="friends-header" tooltip="Winrate against" tooltipStyle={{top: -5}}>
                   <div className="header-info-small" style={{fontSize: 12}}> WIN AGAINST % </div>
               </TableHeaderColumn>
-              <TableHeaderColumn tooltip="Winrate with" tooltipStyle={{top: -5}}>
+              <TableHeaderColumn className="friends-header" tooltip="Gold per minute" tooltipStyle={{top: -5}}>
                   <div className="header-info-small" style={{fontSize: 12}}> GPM WITH </div>
               </TableHeaderColumn>
-              <TableHeaderColumn tooltip="Winrate with" tooltipStyle={{top: -5}}>
+              <TableHeaderColumn className="friends-header" tooltip="Experience per minute" tooltipStyle={{top: -5}}>
                   <div className="header-info-small" style={{fontSize: 12}}> XPM WITH </div>
               </TableHeaderColumn>
             </TableRow>
@@ -61,7 +70,7 @@ const Friends = props => {
               stripedRows={false}>
                 {props.account_friends.map((friend, index) => {
                   return (
-                    <TableRow key={index}>
+                    <TableRow key={index} className="table-row">
                       <TableRowColumn>
                         <div className="img-text-container">
                           <div className="friend-image">

@@ -12,7 +12,7 @@ import Friends from '../ComponentTabs/Friends.js';
 import RecentFriends from '../ComponentTabs/RecentFriends.js';
 import Analytics from './Analytics.js';
 import MatchAnalytics from './MatchAnalytics.js';
-
+import MatchDetail from '../ComponentTabs/MatchDetail.js';
 
 
 import './AccountPage.css';
@@ -22,12 +22,14 @@ import Slider from 'material-ui/Slider';
 const AccountPage = props => {
   console.log('Props in the AccountPage are ->', props.account )
 
-  return (
+  return (<div>
+    <div> {props.match_flag ? <MatchDetail /> : null}</div>
+
     <div> {props.final_fetch_flag ?
       <div className="account-page">
         <Profile />
-          <Tabs style={{marginLeft: '15%', marginRight: '13.5%'}}>
-            <Tab label="Overview" style={{background:'blue'}}>
+          <Tabs className="tab-container" inkBarStyle={{backgroundColor: '#3B90E4'}}>
+            <Tab className="tabs" label="Overview">
               <div className="overview-container">
                 <div className="item1">
                 <RecentMatches />
@@ -40,45 +42,39 @@ const AccountPage = props => {
               </div>
               </div>
             </Tab>
-            <Tab label="Matches" style={{background:'yellow'}}>
+            <Tab className="tabs" label="Matches">
               <div>
                 <Matches />
               </div>
             </Tab>
-            <Tab label="Heroes" style={{background:'red'}}>
+            <Tab className="tabs" label="Heroes">
                 <div>
                   <Heroes />
                 </div>
             </Tab>
-            <Tab label="Analytics" style={{background:'red'}}>
-              <div>
-                <MatchAnalytics />
-                <Analytics />
-              </div>
-            </Tab>
-            <Tab label="Pros" style={{background:'red'}}>
-
-            </Tab>
-            <Tab label="Friends" style={{background:'red'}}>
+            <Tab className="tabs" label="Friends">
               <div>
                 <Friends />
               </div>
             </Tab>
-            <Tab label="Records" style={{background:'red'}}>
-
-            </Tab>
-            <Tab label="Totals" style={{background:'red'}}>
-
+            <Tab className="tabs" label="Analytics">
+              <div>
+                {/* <MatchDetail /> */}
+                {/*
+                <MatchAnalytics />
+                <Analytics /> */}
+              </div>
             </Tab>
         </Tabs>
       </div> : <DotLoader />}
   </div>
-  )}
+  </div>)}
 
   const mapStateToProps = state => {
     return {
       account: state.account,
-      final_fetch_flag: state.final_fetch_flag
+      final_fetch_flag: state.final_fetch_flag,
+      match_flag: state.match_flag
     }
   }
 

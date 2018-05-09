@@ -49,11 +49,12 @@ render() {
   return(
     <div className="outer-container">
       <div style={{marginTop: 15, marginBottom: 15, width: 'fit-content'}}>
-        <Card zDepth={5}
+        <Card zDepth={0}
+          style={{backgroundColor: '#1f1f1f00'}}
           rounded={false}
           children={
             <div className="header-text" style={{marginLeft: 15, marginRight: 15}}>
-            <i style={{marginRight: 5}} class="material-icons">label_outline</i>
+            <i style={{marginRight: 5, color: '#FA0013'}} className="material-icons">label_outline</i>
             <h1 style={{fontSize: 25}}>Heroes Played</h1>
             </div>
           }>
@@ -62,6 +63,7 @@ render() {
       <div className="outside-container">
         <div className="inner-container">
           <Table
+            style={{overflow: 'hidden'}}
             className="edit-me"
             selectable={false}
             multiSelectable={false}>
@@ -74,26 +76,26 @@ render() {
               textTransform: 'uppercase',
               fontWeight: 500
             }}>
-            <TableRow>
-              <TableHeaderColumn tooltip="Hero played">
+            <TableRow className="table-row-header">
+              <TableHeaderColumn className="heroes-header" className="heroes-header" tooltip="Hero played">
                 <div className="img-text-container" style={{fontSize: 12}}>Hero</div>
               </TableHeaderColumn>
-              <TableHeaderColumn tooltip="Matches played with hero">
+              <TableHeaderColumn className="heroes-header" tooltip="Matches played with hero">
                 <div className="header-info-small" style={{fontSize: 12}}>GP</div>
               </TableHeaderColumn>
-              <TableHeaderColumn tooltip="Winrate with this hero">
+              <TableHeaderColumn className="heroes-header" tooltip="Winrate with this hero">
                 <div className="header-info-small" style={{fontSize: 12}}>WIN %</div>
               </TableHeaderColumn>
-              <TableHeaderColumn tooltip="Number of games with this hero on the team">
+              <TableHeaderColumn className="heroes-header" tooltip="Number of games with this hero on the team">
                 <div className="header-info-small" style={{fontSize: 12}}>WITH</div>
               </TableHeaderColumn>
-              <TableHeaderColumn tooltip="Winrate with this hero on the team">
+              <TableHeaderColumn className="heroes-header" tooltip="Winrate with this hero on the team">
                 <div className="header-info-small" style={{fontSize: 12}}>WIN WITH %</div>
               </TableHeaderColumn>
-              <TableHeaderColumn tooltip="Number of games against this hero">
+              <TableHeaderColumn className="heroes-header" tooltip="Number of games against this hero">
                 <div className="header-info-small" style={{fontSize: 12}}>AGAINST</div>
               </TableHeaderColumn>
-              <TableHeaderColumn tooltip="Winrate against this hero">
+              <TableHeaderColumn className="heroes-header" tooltip="Winrate against this hero">
                 <div className="header-info-small" style={{fontSize: 12}}>WIN AGAINST %</div>
               </TableHeaderColumn>
             </TableRow>
@@ -107,7 +109,7 @@ render() {
                   // console.log(this.state.currentHeroes);
                   return( heroes.map((hero, index) => {
                     return(
-                      <TableRow key={index}>
+                      <TableRow key={index} className="table-row">
                         <TableRowColumn>
                           <div className="img-text-container">
                             <div className="hero-image">

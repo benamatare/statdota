@@ -8,6 +8,9 @@
     accounts: [],
     final_fetch_flag: false,
     last_fetch_hit: false,
+    match_id: null,
+    match: null,
+    match_flag: false,
     account: {
       account_id: "",
       account_info: {},
@@ -22,6 +25,18 @@
 
 export function rootReducer(state = defaultState, action)  {
   switch (action.type) {
+    case 'SET_MATCH_FLAG':
+      return {...state,
+        match_flag: !state.match_flag
+    }
+    case 'SET_MATCH_ID':
+      return {...state,
+        match_id: action.payload
+    }
+    case 'GET_SINGLE_MATCH_DATA':
+      return {...state,
+        match: action.payload
+      }
     case 'SET_LIVE_STATUS':
       return {...state,
         live: action.payload

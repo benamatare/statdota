@@ -45,6 +45,7 @@
 .profile-paper {
   margin: 2px;
   height: fit-content;
+  background-color: #ffffff00 !important;
   /* padding-left: 10; */
   /* padding-right: 10; */
 }
@@ -89,6 +90,7 @@ margin: auto;
   flex-direction: column;
   height: 197px;
   width: 36px;
+  background-color: #ffffff00 !important;
 }
 
 .profile-hero-icons-parent {

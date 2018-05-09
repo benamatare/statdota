@@ -51,11 +51,12 @@ render() {
   return(
     <div className="outer-container">
       <div style={{marginTop: 15, marginBottom: 15, width: 'fit-content'}}>
-        <Card zDepth={5}
+        <Card zDepth={0}
+          style={{backgroundColor: '#1f1f1f00'}}
           rounded={false}
           children={
             <div className="header-text" style={{marginLeft: 15, marginRight: 15}}>
-            <i style={{marginRight: 5}} class="material-icons">label_outline</i>
+            <i style={{marginRight: 5, color: '#FA0013'}} className="material-icons">label_outline</i>
             <h1 style={{fontSize: 25}}>Match History</h1>
             </div>
           }>
@@ -64,6 +65,7 @@ render() {
       <div className="outside-container">
         <div className="inner-container">
           <Table
+            style={{overflow: 'hidden'}}
             className="edit-me"
             selectable={false}
             multiSelectable={false}>
@@ -76,26 +78,26 @@ render() {
               textTransform:'uppercase',
               fontWeight: 500
             }}>
-            <TableRow>
-              <TableHeaderColumn tooltip="Hero played, what team & lane" tooltipStyle={{top: -5}}>
+            <TableRow className="table-row-header">
+              <TableHeaderColumn className="matches-header" tooltip="Hero played, what team & lane" tooltipStyle={{top: -5}}>
                 <div className="header-info-small" style={{fontSize: 12}}> Hero </div>
               </TableHeaderColumn>
-              <TableHeaderColumn tooltip="ID of the match, game mode & ranked or unranked" tooltipStyle={{top: -5}}>
+              <TableHeaderColumn className="matches-header" tooltip="ID of the match, game mode & ranked or unranked" tooltipStyle={{top: -5}}>
                 <div className="header-info-small" style={{fontSize: 12}}> Game Mode </div>
               </TableHeaderColumn>
-              <TableHeaderColumn tooltip="Player lost or Won & skill level" tooltipStyle={{top: -5}}>
+              <TableHeaderColumn className="matches-header" tooltip="Player lost or Won & skill level" tooltipStyle={{top: -5}}>
                 <div className="header-info-small" style={{fontSize: 12}}> Result </div>
               </TableHeaderColumn>
-              <TableHeaderColumn tooltip="Length of match" tooltipStyle={{top: -5}}>
+              <TableHeaderColumn className="matches-header" tooltip="Length of match" tooltipStyle={{top: -5}}>
                 <div className="header-info-small" style={{fontSize: 12}}> Duration </div>
               </TableHeaderColumn>
-              <TableHeaderColumn tooltip="Number of kills by player" tooltipStyle={{top: -5}}>
+              <TableHeaderColumn className="matches-header" tooltip="Number of kills by player" tooltipStyle={{top: -5}}>
                 <div className="header-info-small" style={{fontSize: 12}}> K </div>
               </TableHeaderColumn>
-              <TableHeaderColumn tooltip="Number of deaths by player" tooltipStyle={{top: -5}}>
+              <TableHeaderColumn className="matches-header" tooltip="Number of deaths by player" tooltipStyle={{top: -5}}>
                 <div className="header-info-small" style={{fontSize: 12}}> D </div>
               </TableHeaderColumn>
-              <TableHeaderColumn tooltip="Number of assist by player" tooltipStyle={{top: -5}}>
+              <TableHeaderColumn className="matches-header" tooltip="Number of assist by player" tooltipStyle={{top: -5}}>
                 <div className="header-info-small" style={{fontSize: 12}}> A </div>
               </TableHeaderColumn>
             </TableRow>
@@ -109,7 +111,7 @@ render() {
                   // debugger
                     return( matches.map((match, index) => {
                       return(
-                        <TableRow key={index}>
+                        <TableRow key={index} className="table-row">
                           <TableRowColumn>
                             <div className="img-text-container">
                               <div className="hero-image">

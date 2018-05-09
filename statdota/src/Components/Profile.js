@@ -34,7 +34,7 @@ const Profile = props => {
               style={{ margin:0, height:180, width:180}}
               circle={true}
               rounded={false}
-              zDepth={5}
+              zDepth={0}
               children ={
                 PROP_CHECK.profile ? <Avatar className="profile-avatar" style={{height:'100%', width:'100%'}} src={props.account.account_info.profile.avatarfull}/> : <DotLoader />
               }/>
@@ -43,7 +43,7 @@ const Profile = props => {
               <Paper
                 className="profile-hero-icons"
                 rounded={false}
-                zDepth={2}
+                zDepth={0}
                 children={
                   sortHeroesPlayed().slice(0,5).map(hero => {
                     return <img style={{margin: 2}} src={heroes[hero.hero_id].icon} alt="hero_icon"/>
@@ -54,9 +54,9 @@ const Profile = props => {
             <Paper
               className="profile-paper"
               rounded={false}
-              zDepth={4}
+              zDepth={0}
               children ={
-              PROP_CHECK.profile ?  <div className="profile-text">
+              PROP_CHECK.rank_tier == null || PROP_CHECK.rank_tier == 'undefined' ?  <div className="profile-text">
                   {props.account.account_info.profile.personaname ? <h1 style={{margin: 1}}>{props.account.account_info.profile.personaname}</h1> : null}
                   {props.account.account_info.rank_tier ? <p style={{margin: 1}}> {ranks[props.account.account_info.rank_tier].name}</p> : null}
                 </div> : null
@@ -65,7 +65,7 @@ const Profile = props => {
             <Paper
               className="profile-paper"
               rounded={false}
-              zDepth={4}
+              zDepth={0}
               children ={
               PROP_CHECK_WIN_LOSS ?  <div>
                   <p style={{margin: 1}}>WINS</p>
@@ -75,7 +75,7 @@ const Profile = props => {
           <Paper
             className="profile-paper"
             rounded={false}
-            zDepth={4}
+            zDepth={0}
             children ={
             PROP_CHECK_WIN_LOSS ?  <div>
                 <p style={{margin: 1}}>LOSSES</p>
@@ -85,7 +85,7 @@ const Profile = props => {
             <Paper
               className="profile-paper"
               rounded={false}
-              zDepth={4}
+              zDepth={0}
               children ={
               WINS && TOTAL_MATCHES ?  <div>
                    <p style={{margin: 1}}>WINRATE</p>
@@ -95,7 +95,7 @@ const Profile = props => {
           <Paper
             className="profile-paper"
             rounded={false}
-            zDepth={4}
+            zDepth={0}
             children ={
             TOTAL_MATCHES ?  <div>
                 <p style={{margin: 1, fontSize: 16}}>RECORD</p>
@@ -109,7 +109,7 @@ const Profile = props => {
           <Paper
             className="profile-paper"
             rounded={false}
-            zDepth={2}
+            zDepth={0}
             children ={
             PROP_CHECK.solo_competitive_rank !== null  ?  <div>
                 <p style={{margin: 1}}>SOLO MMR</p>
@@ -119,7 +119,7 @@ const Profile = props => {
           <Paper
             className="profile-paper"
             rounded={false}
-            zDepth={2}
+            zDepth={0}
             children ={
             PROP_CHECK.competitive_rank !== null ?  <div>
                 <p style={{margin: 1}}>PARTY MMR</p>
@@ -129,7 +129,7 @@ const Profile = props => {
           <Paper
             className="profile-paper"
             rounded={false}
-            zDepth={2}
+            zDepth={0}
             children ={
             PROP_CHECK.solo_competitive_rank || PROP_CHECK.competitive_rank ?  <div>
               <p style={{margin: 1}}>ESTIMATED MMR</p>
@@ -155,7 +155,7 @@ const Profile = props => {
                 <Paper
                   className="rank-paper"
                   rounded={false}
-                  zDepth={4}
+                  zDepth={0}
                   children ={
                   PROP_CHECK.profile ? <div className="profile-rank">
                     <img src={}/>

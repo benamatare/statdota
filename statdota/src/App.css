@@ -1,14 +1,11 @@
-.flex-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 .account-cards-container {
+  justify-content: center;
   display: flex;
   flex-wrap: wrap;
   align-items: right;
-  width: 70%;
-  float:right;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 body {
   overflow: auto;

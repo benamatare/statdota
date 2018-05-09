@@ -18,11 +18,12 @@ const HeroesPlayed = props => {
   return (
     <div className="outer-container">
       <div style={{marginTop: 15, marginBottom: 15, width: 'fit-content'}}>
-        <Card zDepth={5}
+        <Card zDepth={0}
+          style={{backgroundColor: '#1f1f1f00'}}
           rounded={false}
           children={
             <div className="header-text" style={{marginLeft: 15, marginRight: 15}}>
-            <i style={{marginRight: 5}} class="material-icons">label_outline</i>
+            <i style={{marginRight: 5, color: '#FA0013'}} className="material-icons">label_outline</i>
             <h1 style={{fontSize: 25}}>Heroes Played With</h1>
             </div>
           }>
@@ -43,14 +44,14 @@ const HeroesPlayed = props => {
               textTransform: 'uppercase',
               fontWeight: 500
             }}>
-            <TableRow>
-              <TableHeaderColumn tooltip="Hero played" tooltipStyle={{top: -5}}>
-                <div className="header-info-small" style={{fontSize: 12}}> HERO </div>
+            <TableRow className="table-row-header">
+              <TableHeaderColumn className="heroes-played-header" tooltip="Hero played" tooltipStyle={{top: -5}}>
+                <div className="header-info-small" style={{fontSize: 12, textAlign: 'right'}}> HERO </div>
               </TableHeaderColumn>
-              <TableHeaderColumn tooltip="Games played with" tooltipStyle={{top: -5}}>
+              <TableHeaderColumn className="heroes-played-header" tooltip="Games played with" tooltipStyle={{top: -5}}>
                 <div className="header-info-small" style={{fontSize: 12}}> GP </div>
               </TableHeaderColumn>
-              <TableHeaderColumn tooltip="Winrate with" tooltipStyle={{top: -5}}>
+              <TableHeaderColumn className="heroes-played-header" tooltip="Winrate with" tooltipStyle={{top: -5}}>
                 <div className="header-info-small" style={{fontSize: 12}}> WIN % </div>
               </TableHeaderColumn>
             </TableRow>
@@ -62,7 +63,7 @@ const HeroesPlayed = props => {
               stripedRows={false}>
                 {sortHeroesPlayed().slice(0,10).map((hero, index) => {
                   return (
-                    <TableRow key={index}>
+                    <TableRow key={index} className="table-row">
                       <TableRowColumn>
                         <div className="img-text-container">
                           <div className="hero-image">

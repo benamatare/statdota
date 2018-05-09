@@ -1,3 +1,14 @@
+  export function setMatchId(match_id) {
+    return {
+      type: 'SET_MATCH_ID', payload: match_id
+    }
+  }
+
+export function setMatchFlag() {
+  return {
+    type: 'SET_MATCH_FLAG'
+  }
+}
   export function setAccountClicked() {
     return {
       type: 'SET_ACCOUNT_CLICKED'
@@ -101,11 +112,28 @@
            .then(json => dispatch({ type: 'SET_ACCOUNT_FRIENDS', payload: json }))
          }
        }
+       export function fetchMatch(match_id) {
+         return (dispatch) => {
+          dispatch({ type: 'LOAD_DATA_FLAG' });
+          return fetch(`https://api.opendota.com/api/matches/${match_id}`)
+            .then(res => res.json())
+            .then(json => dispatch({ type: 'GET_SINGLE_MATCH_DATA', payload: json }))
+          }
+        }
+        export function fetchHeroes(match_id) {
+          return (dispatch) => {
+           dispatch({ type: 'LOAD_DATA_FLAG' });
+           return fetch(`https://api.opendota.com/api/heroes`)
+             .then(res => res.json())
+             .then(json => dispatch({ type: 'GET_SINGLE_MATCH_DATA', payload: json }))
+           }
+         }
 
+///TEST ER EBSTER U AJSKHDJKHASGDJKHAS
        export function fetchLive() {
          return (dispatch) => {
           dispatch({ type: 'LOAD_DATA_FLAG' });
-          return fetch(`https://api.stratz.com/api/v1/Hero`)
+          return fetch(`https://api.stratz.com/api/v1/Hero/13`)
             .then(res => res.json())
             .then(json => dispatch({ type: 'SET_LIVE_STATUS', payload: json }))
           }

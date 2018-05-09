@@ -63,6 +63,8 @@
 .header-text {
   font-size: 20px;
   font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: #E2E2E2; 
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -102,3 +104,40 @@
   line-height: 1.2;
   width: 125px;
 }
+
+.recent-matches-header {
+  color: #ffffff !important;
+  height: 30px !important;
+  font-weight: 400 !important;
+}
+.table-row {
+    border-bottom: 3px solid rgb(37,37,37) !important;
+}
+
+.table-row-header {
+  background-color: #252525 !important;
+}
+
+tr:nth-child(even) {
+  background: #1f1f1f
+};
+tr:nth-child(odd) {
+  background: #212121
+};
+
+ thead:nth-child(n) {
+   width:50% !important;
+  padding-left: 22px !important;
+  font-size: 22px !important;
+  color: red !important;
+  background-color: red !important;
+  background: red;
+}
+.edit-me table tr th:nth-child(n) {
+   width:50% !important;
+  padding-left: 22px !important;
+  font-size: 22px !important;
+  color: red !important;
+  background-color: red !important;
+  background: red;
+};

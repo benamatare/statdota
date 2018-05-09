@@ -10,10 +10,9 @@ class Searchbar extends Component {
   }
 
   handleSearch = event => {
-    console.log(event)
-      this.setState({
-        account_query: event
-      })
+    this.setState({
+      account_query: event
+    })
   }
 
   handleSearchSubmit = () => {
@@ -21,7 +20,7 @@ class Searchbar extends Component {
     this.props.setQuery(this.state.account_query)
     this.props.getAccounts(this.state.account_query)
     this.props.setAccountClicked()
-    console.log('Hit setLoadFlag, setQuery, setAccountClicked & getAccounts')
+    // console.log('Hit setLoadFlag, setQuery, setAccountClicked & getAccounts')
   }
 
   render() {
