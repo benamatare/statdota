@@ -37,16 +37,6 @@ const Analytics = props => {
     }
   )}
 
-// debugger
-//
-//      EZ PEAASGDJHASGD
-
-// if i have the accounts lifetime overall averages  i can do the same for recent matches array then i can bnring a chart in
-// and with chart.js i can plot a line graph of the lifetime vs the recent matches WHICH WILL BE DYNAMIC TO THE MOTHER FUCKER 
-//
-//
-//
-//
 
   return(
     // <div>

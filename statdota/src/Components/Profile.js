@@ -19,25 +19,32 @@ const Profile = props => {
       return b.games - a.games })
   }
 
-  var TOTAL_MATCHES = props.account.account_matches.length
-  var WINS = props.account.account_w_l.win
-  var W_L = (WINS/TOTAL_MATCHES)*100
-  var PROP_CHECK = props && props.account.account_info
-  var PROP_CHECK_WIN_LOSS = props && props.account.account_w_l
+  let ACC = props.account
+  let ACC_INFO = props.account.account_info
+  let ACC_TOTAL_MATCHES = props.account.account_matches.length
+  let ACC_WINS = props.account.account_w_l.win
+  let ACC_LOSSES = props.account.account_w_l.lose
 
-  return(
+if (props.fetch_counter === 10) {
+  return (
     <div className="container">
       <div className="top-container">
           <div className="img-container">
-            <Paper
-              className="profile-avatar"
-              style={{ margin:0, height:180, width:180}}
-              circle={true}
-              rounded={false}
-              zDepth={0}
-              children ={
-                PROP_CHECK.profile ? <Avatar className="profile-avatar" style={{height:'100%', width:'100%'}} src={props.account.account_info.profile.avatarfull}/> : <DotLoader />
-              }/>
+            {ACC_INFO.profile ?
+              <Paper
+                className="profile-avatar"
+                style={{ margin:0, height:180, width:180}}
+                circle={true}
+                rounded={false}
+                zDepth={0}
+                children ={
+                  <Avatar
+                    className="profile-avatar"
+                    style={{height:'100%', width:'100%'}}
+                    src={props.account.account_info.profile.avatarfull}
+                  />
+                }/>
+            : null}
           </div>
           <div className="profile-hero-icons-parent">
               <Paper
@@ -46,132 +53,140 @@ const Profile = props => {
                 zDepth={0}
                 children={
                   sortHeroesPlayed().slice(0,5).map(hero => {
-                    return <img style={{margin: 2}} src={heroes[hero.hero_id].icon} alt="hero_icon"/>
+                    return <img key={hero.hero_id} style={{margin: 2}} src={heroes[hero.hero_id].icon} alt="hero_icon"/>
                   })
                 }/>
           </div>
+
+
           <div className="profile-name-info">
-            <Paper
-              className="profile-paper"
-              rounded={false}
-              zDepth={0}
-              children ={
-              PROP_CHECK.rank_tier == null || PROP_CHECK.rank_tier == 'undefined' ?  <div className="profile-text">
-                  {props.account.account_info.profile.personaname ? <h1 style={{margin: 1}}>{props.account.account_info.profile.personaname}</h1> : null}
-                  {props.account.account_info.rank_tier ? <p style={{margin: 1}}> {ranks[props.account.account_info.rank_tier].name}</p> : null}
-                </div> : null
-              }/>
+            {ACC_INFO.profile.personaname && ACC_INFO.rank_tier ?
+              <Paper
+                className="profile-paper"
+                rounded={false}
+                zDepth={0}
+                children ={
+                  <div className="profile-text">
+                    {props.account.account_info.profile.personaname ? <h1 style={{margin: 1}}>{props.account.account_info.profile.personaname}</h1> : null}
+                    {props.account.account_info.rank_tier ? <p style={{margin: 1}}> {ranks[props.account.account_info.rank_tier].name}</p> : null}
+                  </div>
+                }/>
+            : null}
+          </div>
           <div className="profile-stats">
+            {ACC_WINS ?
             <Paper
               className="profile-paper"
               rounded={false}
               zDepth={0}
               children ={
-              PROP_CHECK_WIN_LOSS ?  <div>
+                <div>
                   <p style={{margin: 1}}>WINS</p>
                   <h2 style={{margin: 1, color: 'green'}}>{props.account.account_w_l.win} </h2>
-                </div> : null
+                </div>
               }/>
-          <Paper
-            className="profile-paper"
-            rounded={false}
-            zDepth={0}
-            children ={
-            PROP_CHECK_WIN_LOSS ?  <div>
-                <p style={{margin: 1}}>LOSSES</p>
-                <h2 style={{margin: 1, color: 'red'}}>{props.account.account_w_l.lose}</h2>
-              </div> : null
-            }/>
+          : null}
+          {ACC_LOSSES ?
             <Paper
               className="profile-paper"
               rounded={false}
               zDepth={0}
               children ={
-              WINS && TOTAL_MATCHES ?  <div>
-                   <p style={{margin: 1}}>WINRATE</p>
-                   <h1 style={{margin: 1}}>{W_L.toFixed(0)}%</h1>
-                </div> : null
+              <div>
+                  <p style={{margin: 1}}>LOSSES</p>
+                  <h2 style={{margin: 1, color: 'red'}}>{props.account.account_w_l.lose}</h2>
+              </div>
               }/>
-          <Paper
-            className="profile-paper"
-            rounded={false}
-            zDepth={0}
-            children ={
-            TOTAL_MATCHES ?  <div>
-                <p style={{margin: 1, fontSize: 16}}>RECORD</p>
-                <h2 style={{margin: 1, fontSize: 16}}>{props.account.account_w_l.win + " - " + props.account.account_w_l.lose + " - " + TOTAL_MATCHES}</h2>
-              </div> : null
-            }/>
-
-          </div>
-
-          <div className="profile-mmr">
-          <Paper
-            className="profile-paper"
-            rounded={false}
-            zDepth={0}
-            children ={
-            PROP_CHECK.solo_competitive_rank !== null  ?  <div>
-                <p style={{margin: 1}}>SOLO MMR</p>
-                <h2 style={{margin: 1}}>{props.account.account_info.solo_competitive_rank}</h2>
-              </div> : null
-            }/>
-          <Paper
-            className="profile-paper"
-            rounded={false}
-            zDepth={0}
-            children ={
-            PROP_CHECK.competitive_rank !== null ?  <div>
-                <p style={{margin: 1}}>PARTY MMR</p>
-                <h2 style={{margin: 1}}>{props.account.account_info.competitive_rank}</h2>
-              </div> : null
-            }/>
-          <Paper
-            className="profile-paper"
-            rounded={false}
-            zDepth={0}
-            children ={
-            PROP_CHECK.solo_competitive_rank || PROP_CHECK.competitive_rank ?  <div>
-              <p style={{margin: 1}}>ESTIMATED MMR</p>
-              <h2 style={{margin: 1}}>{props.account.account_info.mmr_estimate.estimate}</h2>
-            </div> : null
-            }/>
-            </div>
-          </div>
-          <div className="rank-img-container">
+          : null}
+          {ACC_TOTAL_MATCHES && ACC_WINS ?
             <Paper
-              className="profile-rank"
-              style={{backgroundColor: 0, position: 'relative', margin:0, height:180, width:180}}
+              className="profile-paper"
               rounded={false}
               zDepth={0}
-              children ={
-                PROP_CHECK.profile ?
-                <div style={{}}>
-                  <Avatar className="stars-avatar" style={{backgroundColor: 0, position: 'absolute', borderRadius: 0, height:'100%', width:'100%'}} src={ranks[props.account.account_info.rank_tier].rank_stars}/>
-                  <Avatar className="rank-avatar" style={{backgroundColor: 0, position: 'absolute', borderRadius: 0, height:'100%', width:'100%'}} src={ranks[props.account.account_info.rank_tier].rank_icon}/>
-                </div>: null }/>
-          </div>
-          {/* <div className="profile-rank-image">
-                <Paper
-                  className="rank-paper"
-                  rounded={false}
-                  zDepth={0}
-                  children ={
-                  PROP_CHECK.profile ? <div className="profile-rank">
-                    <img src={}/>
-                    <img src={ranks[props.account.account_info.rank_tier].rank_icon}/>
-                  </div> : null
-                  }/>
-          </div> */}
-
+              children={
+                <div>
+                 <p style={{margin: 1}}>WINRATE</p>
+                 <h1 style={{margin: 1}}>{((ACC_WINS/ACC_TOTAL_MATCHES)*100).toFixed(0)}%</h1>
+                </div>
+              }/>
+          : null }
+          {ACC_TOTAL_MATCHES ?
+            <Paper
+            className="profile-paper"
+            rounded={false}
+            zDepth={0}
+            children={
+              <div>
+                <p style={{margin: 1, fontSize: 16}}>RECORD</p>
+                <h2 style={{margin: 1, fontSize: 16}}>{ACC_WINS + " - " + ACC_LOSSES + " - " + ACC_TOTAL_MATCHES}</h2>
+              </div>
+            }/>
+          : null}
         </div>
+        <div className="profile-mmr">
+          {ACC_INFO.solo_competitive_rank ?
+            <Paper
+              className="profile-paper"
+              rounded={false}
+              zDepth={0}
+              children={
+                <div>
+                  <p style={{margin: 1}}>SOLO MMR</p>
+                  <h2 style={{margin: 1}}>{props.account.account_info.solo_competitive_rank}</h2>
+                </div>
+              }/>
+          : null}
+          {ACC_INFO.competitive_rank ?
+            <Paper
+              className="profile-paper"
+              rounded={false}
+              zDepth={0}
+              children={
+                <div>
+                  <p style={{margin: 1}}>PARTY MMR</p>
+                  <h2 style={{margin: 1}}>{props.account.account_info.competitive_rank}</h2>
+                </div>
+              }/>
+          : null}
+          {/* {ACC_INFO.mmr_estimate.estimate ?
+            <Paper
+              className="profile-paper"
+              rounded={false}
+              zDepth={0}
+              children={
+                <div>
+                  <p style={{margin: 1}}>ESTIMATED MMR</p>
+                  <h2 style={{margin: 1}}>{props.account.account_info.mmr_estimate.estimate}</h2>
+                </div>
+              }/>
+          : null} */}
+          {ACC_INFO.rank_tier ?
+             <div className="rank-img-container">
+              <Paper
+                className="profile-rank"
+                style={{backgroundColor: 0, position: 'relative', margin:0, height:180, width:180}}
+                rounded={false}
+                zDepth={0}
+                children={
+                  <div>
+                    <Avatar className="stars-avatar" style={{backgroundColor: 0, position: 'absolute', borderRadius: 0, height:'100%', width:'100%'}} src={ranks[props.account.account_info.rank_tier].rank_stars}/>
+                    <Avatar className="rank-avatar" style={{backgroundColor: 0, position: 'absolute', borderRadius: 0, height:'100%', width:'100%'}} src={ranks[props.account.account_info.rank_tier].rank_icon}/>
+                  </div>
+                }/>
+            </div>
+          : null}
+        </div>
+      </div>
     </div>
-  )}
+  )} else {
+    return <DotLoader />
+  }
+}
 
   const mapStateToProps = state => {
     return {
-      account: state.account,
-      final_fetch_flag: state.final_fetch_flag
+      fetch_counter: state.fetch_counter,
+      account: state.account
     }
   }
 

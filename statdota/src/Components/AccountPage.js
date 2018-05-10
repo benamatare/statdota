@@ -13,7 +13,8 @@ import RecentFriends from '../ComponentTabs/RecentFriends.js';
 import Analytics from './Analytics.js';
 import MatchAnalytics from './MatchAnalytics.js';
 import MatchDetail from '../ComponentTabs/MatchDetail.js';
-
+import RadarChart from '../ComponentTabs/RadarChart.js';
+import LoadingScreen from './LoadingScreen.js';
 
 import './AccountPage.css';
 import { Tabs, Tab } from 'material-ui/Tabs';
@@ -22,10 +23,8 @@ import Slider from 'material-ui/Slider';
 const AccountPage = props => {
   console.log('Props in the AccountPage are ->', props.account )
 
-  return (<div>
-    <div> {props.match_flag ? <MatchDetail /> : null}</div>
-
-    <div> {props.final_fetch_flag ?
+  if (props.fetch_counter === 10) {
+    return (
       <div className="account-page">
         <Profile />
           <Tabs className="tab-container" inkBarStyle={{backgroundColor: '#3B90E4'}}>
@@ -58,23 +57,22 @@ const AccountPage = props => {
               </div>
             </Tab>
             <Tab className="tabs" label="Analytics">
-              <div>
-                {/* <MatchDetail /> */}
-                {/*
-                <MatchAnalytics />
-                <Analytics /> */}
+              <div style={{display: 'block'}}>
+                <Analytics />
+                <RadarChart />
               </div>
             </Tab>
         </Tabs>
-      </div> : <DotLoader />}
-  </div>
-  </div>)}
+      </div>
+    )} else {
+    return <LoadingScreen />
+    }
+}
 
   const mapStateToProps = state => {
     return {
-      account: state.account,
-      final_fetch_flag: state.final_fetch_flag,
-      match_flag: state.match_flag
+      fetch_counter: state.fetch_counter,
+      account: state.account
     }
   }
 

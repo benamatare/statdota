@@ -45,7 +45,7 @@ export function setMatchFlag() {
   }
   export function fetchMatchData(match_id) {
     return (dispatch) => {
-      dispatch({ type: 'LOAD_DATA_FLAG' });
+      dispatch({ type: '----' });
       return fetch(`https://api.opendota.com/api/matches/${match_id}`)
         .then(res => res.json())
         .then(json => dispatch({ type: 'GET_MATCH_DATA', payload: json }))
@@ -54,7 +54,7 @@ export function setMatchFlag() {
 
   export function fetchAccounts(query_id) {
     return (dispatch) => {
-      dispatch({ type: 'LOAD_DATA_FLAG' });
+      dispatch({ type: '----' });
       return fetch(`https://api.opendota.com/api/search?q=${query_id}`)
         .then(res => res.json())
         .then(json => dispatch({ type: 'ADD_ACCOUNTS', payload: json }))
@@ -63,7 +63,7 @@ export function setMatchFlag() {
 
   export function fetchAccountInfo(account_id) {
     return (dispatch) => {
-      dispatch({ type: 'LOAD_DATA_FLAG' });
+      dispatch({ type: '----' });
       return fetch(`https://api.opendota.com/api/players/${account_id}`)
         .then(res => res.json())
         .then(json => dispatch({ type: 'SET_ACCOUNT_INFO', payload: json }))
@@ -72,7 +72,7 @@ export function setMatchFlag() {
 
   export function fetchAccountRecentMatches(account_id) {
     return (dispatch) => {
-     dispatch({ type: 'LOAD_DATA_FLAG' });
+     dispatch({ type: '----' });
      return fetch(`https://api.opendota.com/api/players/${account_id}/recentMatches`)
        .then(res => res.json())
        .then(json => dispatch({ type: 'SET_ACCOUNT_RECENT_MATCHES', payload: json }))
@@ -81,7 +81,7 @@ export function setMatchFlag() {
 
    export function fetchAccountMatches(account_id) {
      return (dispatch) => {
-      dispatch({ type: 'LOAD_DATA_FLAG' });
+      dispatch({ type: '----' });
       return fetch(`https://api.opendota.com/api/players/${account_id}/matches`)
         .then(res => res.json())
         .then(json => dispatch({ type: 'SET_ACCOUNT_MATCHES', payload: json }))
@@ -89,7 +89,7 @@ export function setMatchFlag() {
     }
     export function fetchAccountHeroes(account_id) {
       return (dispatch) => {
-       dispatch({ type: 'LOAD_DATA_FLAG' });
+       dispatch({ type: '----' });
        return fetch(`https://api.opendota.com/api/players/${account_id}/heroes`)
          .then(res => res.json())
          .then(json => dispatch({ type: 'SET_ACCOUNT_HEROES', payload: json }))
@@ -98,7 +98,7 @@ export function setMatchFlag() {
 
      export function fetchAccountWinLoss(account_id) {
        return (dispatch) => {
-        dispatch({ type: 'LOAD_DATA_FLAG' });
+        dispatch({ type: '----' });
         return fetch(`https://api.opendota.com/api/players/${account_id}/wl`)
           .then(res => res.json())
           .then(json => dispatch({ type: 'SET_ACCOUNT_W_L', payload: json }))
@@ -106,7 +106,7 @@ export function setMatchFlag() {
       }
       export function fetchAccountFriends(account_id) {
         return (dispatch) => {
-         dispatch({ type: 'LOAD_DATA_FLAG' });
+         dispatch({ type: '----' });
          return fetch(`https://api.opendota.com/api/players/${account_id}/peers`)
            .then(res => res.json())
            .then(json => dispatch({ type: 'SET_ACCOUNT_FRIENDS', payload: json }))
@@ -114,7 +114,7 @@ export function setMatchFlag() {
        }
        export function fetchMatch(match_id) {
          return (dispatch) => {
-          dispatch({ type: 'LOAD_DATA_FLAG' });
+          dispatch({ type: '----' });
           return fetch(`https://api.opendota.com/api/matches/${match_id}`)
             .then(res => res.json())
             .then(json => dispatch({ type: 'GET_SINGLE_MATCH_DATA', payload: json }))
@@ -122,18 +122,44 @@ export function setMatchFlag() {
         }
         export function fetchHeroes(match_id) {
           return (dispatch) => {
-           dispatch({ type: 'LOAD_DATA_FLAG' });
+           dispatch({ type: '----' });
            return fetch(`https://api.opendota.com/api/heroes`)
              .then(res => res.json())
              .then(json => dispatch({ type: 'GET_SINGLE_MATCH_DATA', payload: json }))
            }
          }
+         export function fetchPlayerPerformance(account_id) {
+           return (dispatch) => {
+            dispatch({ type: '----' });
+            return fetch(`https://api.stratz.com/api/v1/Player/${account_id}/performance`)
+              .then(res => res.json())
+              .then(json => dispatch({ type: 'SET_PLAYER_PERFORMANCE', payload: json }))
+            }
+          }
+
+          export function fetchPlayerCardGraph(account_id) {
+            return (dispatch) => {
+             dispatch({ type: '----' });
+             return fetch(`https://api.stratz.com/api/v1/Player/${account_id}/cardStats`)
+               .then(res => res.json())
+               .then(json => dispatch({ type: 'SET_PLAYER_CARD_GRAPH', payload: json }))
+             }
+           }
+           export function fetchPlayerLaneRole(account_id) {
+             return (dispatch) => {
+              dispatch({ type: '----' });
+              return fetch(`https://api.opendota.com/api/players/${account_id}/counts`)
+                .then(res => res.json())
+                .then(json => dispatch({ type: 'SET_PLAYER_LANE_ROLES', payload: json }))
+              }
+            }
+
 
 ///TEST ER EBSTER U AJSKHDJKHASGDJKHAS
        export function fetchLive() {
          return (dispatch) => {
-          dispatch({ type: 'LOAD_DATA_FLAG' });
-          return fetch(`https://api.stratz.com/api/v1/Hero/13`)
+          dispatch({ type: '----' });
+          return fetch(`https://api.stratz.com/api/v1/Player/120652372/performance`)
             .then(res => res.json())
             .then(json => dispatch({ type: 'SET_LIVE_STATUS', payload: json }))
           }

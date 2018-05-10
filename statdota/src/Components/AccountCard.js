@@ -13,18 +13,21 @@ import {
   fetchAccountMatches,
   fetchAccountHeroes,
   fetchAccountWinLoss,
-  fetchAccountFriends
+  fetchAccountFriends,
+  fetchPlayerPerformance,
+  fetchPlayerCardGraph,
+  fetchPlayerLaneRole
 } from '../actions.js';
 // Styling
 import Paper from 'material-ui/Paper';
 import Avatar from 'material-ui/Avatar';
 import { CardHeader } from 'material-ui/Card';
+import LoadingScreen from './LoadingScreen.js';
 import './AccountCard.css';
 
 const AccountCard = props => {
   const handleClick = e => {
     e.preventDefault()
-    props.setLoadFlag()
     props.setAccountId(props.account.account_id)
     props.getAccountInfo(props.account.account_id)
     props.getAccountRecentMatches(props.account.account_id)
@@ -32,10 +35,12 @@ const AccountCard = props => {
     props.getAccountHeroes(props.account.account_id)
     props.getAccountWinLoss(props.account.account_id)
     props.getAccountFriends(props.account.account_id)
-    props.setFetchFlag()
+    props.fetchPlayerCardGraph(props.account.account_id)
+    props.fetchPlayerPerformance(props.account.account_id)
+    props.fetchPlayerLaneRole(props.account.account_id)
   }
 
-  return (
+  if (props.account_cards_loaded === true) {return (
     <div className="cards-container">
       <div className="card">
         <Paper
@@ -59,11 +64,15 @@ const AccountCard = props => {
           }/>
       </div>
     </div>
-  )}
+  )} else {
+    return <LoadingScreen />
+  }
+}
 
   const mapStateToProps = state => {return {
+    account_cards_loaded: state.account_cards_loaded,
     accounts: state.accounts,
-    final_fetch_flag: state.final_fetch_flag
+    fetch_counter: state.fetch_counter
   }}
 
   const mapDispatchToProps = dispatch => {return bindActionCreators({
@@ -75,7 +84,10 @@ const AccountCard = props => {
     getAccountMatches: fetchAccountMatches,
     getAccountHeroes: fetchAccountHeroes,
     getAccountWinLoss: fetchAccountWinLoss,
-    getAccountFriends: fetchAccountFriends
+    getAccountFriends: fetchAccountFriends,
+    fetchPlayerPerformance: fetchPlayerPerformance,
+    fetchPlayerCardGraph: fetchPlayerCardGraph,
+    fetchPlayerLaneRole: fetchPlayerLaneRole
   },dispatch)}
 
 export default connect(mapStateToProps, mapDispatchToProps)(AccountCard);

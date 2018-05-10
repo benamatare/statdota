@@ -5,21 +5,26 @@ import { setAccountClicked, setLoadFlag, setGlobalAccountQuery, fetchAccounts } 
 import SearchBar from 'material-ui-search-bar';
 
 class Searchbar extends Component {
-  state = {
-    account_query: "",
+  constructor(props){
+    super(props);
+      this.state = {
+        search_query: "",
+      }
   }
+
 
   handleSearch = event => {
     this.setState({
-      account_query: event
+      search_query: event
     })
   }
 
   handleSearchSubmit = () => {
-    this.props.setLoadFlag()
-    this.props.setQuery(this.state.account_query)
-    this.props.getAccounts(this.state.account_query)
-    this.props.setAccountClicked()
+    this.props.setQuery(this.state.search_query)
+    this.props.getAccounts(this.state.search_query)
+
+    
+    this.props.account_clicked ? this.props.setAccountClicked() : false
     // console.log('Hit setLoadFlag, setQuery, setAccountClicked & getAccounts')
   }
 
@@ -27,14 +32,13 @@ class Searchbar extends Component {
     return(
       <SearchBar
         className="search-bar-comp"
-        value={this.state.account_query}
+        value={this.state.search_query}
         onChange={this.handleSearch}
         onRequestSearch={this.handleSearchSubmit}
         style={{
           margin: '0 auto',
           width: 932,
           height: 41,
-          // boxShadow: 2
         }}
       />
   )}}
@@ -48,4 +52,10 @@ class Searchbar extends Component {
     }, dispatch)
   }
 
-export default connect(null, mapDispatchToProps)(Searchbar);
+  const mapStateToProps = state => {
+    return {
+      account_clicked: state.account_clicked
+    }
+  }
+
+export default connect(mapStateToProps, mapDispatchToProps)(Searchbar);
