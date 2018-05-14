@@ -1,12 +1,14 @@
 # statdota
-Flatiron School Mod 5 Final Project - StatDota
+Created with <3 at Flatiron School
+Module 5 Final Project
+Ben Matare
 
-Readme.md 
+Javascript
+React & Redux
+Material UI
 
-Work in progress will update as features are completed
+Thanks to Opendota.com, Stratz.com, Valve & Dota 2!
+https://www.opendota.com/
+https://stratz.com/en-us/
 
-Search a player, select a player, see their stats
 
-
-
-Thanks to Opendota, Steam, Valve, Dota 2, & Stratz!
