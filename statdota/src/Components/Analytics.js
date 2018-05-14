@@ -3,6 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 // Styling
 import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table';
+import { Card, CardHeader } from 'material-ui/Card';
 
 const Analytics = props => {
   console.log(props.matches);
@@ -39,14 +40,19 @@ const Analytics = props => {
 
 
   return(
-    // <div>
-    // <p> Lifetime Average Kills {(totalKills().reduce((a,b) => a + b) / totalAssists().length).toFixed(2)}</p>
-    // <p> Lifetime Average Deaths {(totalDeaths().reduce((a,b) => a + b) / totalDeaths().length).toFixed(2)}</p>
-    // <p> Lifetime Average Assists {(totalAssists().reduce((a,b) => a + b) / totalAssists().length).toFixed(2)}</p>
-    // <p> Radiant or Dire on Average? {(totalPlayerSlots().reduce((a,b) => a + b) / totalAssists().length).toFixed(2)}</p>
-    // {/* <p> Lifetime Average Assists {new Date((totalDurations().reduce((a,b) => a + b) / totalAssists().length).toFixed(2)).toUTCString().match(/(\d\d:\d\d:\d\d)/)[0]}%</p> */}
-    // </div>
-    // <p>hahah</p>
+    <div className="outer-container">
+      <div style={{marginTop: 15, marginBottom: 15, width: 'fit-content'}}>
+        <Card zDepth={0}
+          style={{backgroundColor: '#1f1f1f00'}}
+          rounded={false}
+          children={
+            <div className="header-text" style={{marginLeft: 15, marginRight: 15}}>
+            <i style={{marginRight: 5, color: '#FA0013'}} className="material-icons">label_outline</i>
+            <h1 style={{fontSize: 25}}> Analytics </h1>
+            </div>
+          }>
+        </Card>
+      </div>
 
     <Table
     height={'100'}
@@ -77,8 +83,8 @@ const Analytics = props => {
           </TableRow>
     </TableBody>
   </Table>
-  )
-}
+  </div>
+)}
 
 const mapStateToProps = state => {
   return {

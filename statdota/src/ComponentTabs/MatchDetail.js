@@ -26,7 +26,7 @@ const MatchDetail = props => {
           {/* {props.match.duration !== null ? <p>{new Date (props.match.duration * 1000).toUTCString().match(/(\d\d:\d\d:\d\d)/)[0]}</p> : null} */}
           {/* {props.match.dire_score !== null  ? <p> Dire Score {props.match.dire_score}</p>: null}
           {props.match.radiant_score !== null  ? <p>Radiant Score {props.match.radiant_score}</p> : null}
-          {props.match.radiant_win !== null  ? <h1>RADIANT FUCKING WON</h1> : <h1>DIRE FUCKING WON</h1>}
+          {props.match.radiant_win !== null  ? <h1>RADIANT  WON</h1> : <h1>DIRE FUCKING WON</h1>}
           {props.match.skill !== null  ? <p>{matchSkillLevel(props.match.skill)}</p> : null}
           {props.match.game_mode !== null  ? <p>{matchType(props.match.game_mode)}</p> : null}
           {props.match.lobby_type !== null  ? <p>{lobbyType(props.match.lobby_type)}</p> : null}

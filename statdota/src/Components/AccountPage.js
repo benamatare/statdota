@@ -23,7 +23,7 @@ import Slider from 'material-ui/Slider';
 const AccountPage = props => {
   console.log('Props in the AccountPage are ->', props.account )
 
-  if (props.fetch_counter === 10) {
+
     return (
       <div className="account-page">
         <Profile />
@@ -64,9 +64,7 @@ const AccountPage = props => {
             </Tab>
         </Tabs>
       </div>
-    )} else {
-    return <LoadingScreen />
-    }
+    )
 }
 
   const mapStateToProps = state => {

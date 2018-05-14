@@ -18,29 +18,57 @@ const App = props => {
 
   const renderAccountCards = () => {
     var accounts = Object.values(props.accounts)
-      return accounts.map(account => <AccountCard key={account.account_id} account={account}/>)
+      return accounts.map(account =>
+        <AccountCard key={account.account_id} account={account}/>)
   }
 
-  return (
-    <div className="app-div">
+  const renderLogic = () => {
+    if(props.account_cards_loaded === true){
+      if(props.account_card_clicked === false){
+        return renderAccountCards()
+      } else if (props.account_card_clicked === true && props.fetch_counter !== 10){
+        // debugger
+        return <LoadingScreen/>
+      }
+    } else if (props.account_card_clicked === true && props.fetch_counter < 10){
+      return <LoadingScreen/>
+
+  } else if (props.account_card_clicked === false && props.account_cards_loaded === false){
+      if (props.accounts.length !== 0) {
+        return <LoadingScreen/>
+      }
+    } else {
+      return (
+        <div className="account-page-container" style={{ paddingBottom: 4 }}>
+           <AccountPage/>
+        </div>)
+    }
+}
+
+  return (<div>
+    {/* <LoadingScreen /> */}
+     <div className="app-div">
       <Header />
-
-      <div className="account-page-container" style={{ paddingBottom: 4 }}>
-        {props.fetch_counter === 10 && props.account_clicked ? <AccountPage /> : null}
-      </div>
-
-      <div className="account-cards-container">
-        {props.account_clicked ? null : renderAccountCards()}
-      </div>
-
+      {!props.accounts.length > 0 ? <iframe
+        style={{
+          margin: 0,
+          position: 'absolute'
+        }}
+        width="100%"
+        height="100%"
+        src="https://www.youtube.com/embed/SmnqsdeHFT0?autoplay=1;rel=0&amp;controls=0&amp;showinfo=0&amp;start=7"
+        frameborder="0" allow="autoplay; encrypted-media"
+        allowFullScreen></iframe> : null}
+      <div className="account-cards-container">{ renderLogic() }  </div>
     </div>
-  )
+  </div>)
 }
 
 const mapStateToProps = state => {
   return {
     fetch_counter: state.fetch_counter,
-    account_clicked: state.account_clicked,
+    account_card_clicked: state.account_card_clicked,
+    account_cards_loaded: state.account_cards_loaded,
     accounts: state.accounts
   }
 }

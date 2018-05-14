@@ -103,7 +103,7 @@ const RadarChart = props => {
         </div>
         <div className="gpm-xpm-lhpm-radar">
           <h1 className="header"> Gold/Experience/Last-Hits </h1>
-            <h2 className="subheader"> Average vs Max </h2>
+            <h2 className="subheader"> Average vs Max - (Per Min)</h2>
             <Radar data={GPM_XPM_LHPM}
               height={500}
               width={1000}

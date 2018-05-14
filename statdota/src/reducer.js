@@ -2,7 +2,7 @@
   const defaultState = {
     account_query: "",
     fetch_counter: 0,
-    
+
     filler: null,
     live: [],
     loaded: false,
@@ -85,7 +85,7 @@ export function rootReducer(state = defaultState, action)  {
     }
     case 'SET_ACCOUNT_CLICKED':
       return {...state,
-        account_clicked: false
+        account_card_clicked: false
       }
     case 'FINAL_FETCH_FLAG':
       return {...state,
@@ -93,7 +93,7 @@ export function rootReducer(state = defaultState, action)  {
       }
     case 'SET_ACCOUNT_ID':
       return {...state,
-        account_clicked: !state.account_clicked,
+        account_card_clicked: !state.account_card_clicked,
         account_cards_loaded: false,
         fetch_counter: state.fetch_counter += 1,
         account: {...state.account,

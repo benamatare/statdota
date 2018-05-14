@@ -22,9 +22,7 @@ class Searchbar extends Component {
   handleSearchSubmit = () => {
     this.props.setQuery(this.state.search_query)
     this.props.getAccounts(this.state.search_query)
-
-    
-    this.props.account_clicked ? this.props.setAccountClicked() : false
+    this.props.setAccountClicked()
     // console.log('Hit setLoadFlag, setQuery, setAccountClicked & getAccounts')
   }
 

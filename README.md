@@ -1,7 +1,7 @@
 # statdota
 Flatiron School Mod 5 Final Project - StatDota
 
-Readme.md 
+Readme.md
 
 Work in progress will update as features are completed
 

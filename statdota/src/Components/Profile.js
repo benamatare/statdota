@@ -25,7 +25,7 @@ const Profile = props => {
   let ACC_WINS = props.account.account_w_l.win
   let ACC_LOSSES = props.account.account_w_l.lose
 
-if (props.fetch_counter === 10) {
+
   return (
     <div className="container">
       <div className="top-container">
@@ -178,10 +178,8 @@ if (props.fetch_counter === 10) {
         </div>
       </div>
     </div>
-  )} else {
-    return <DotLoader />
-  }
-}
+  )}
+
 
   const mapStateToProps = state => {
     return {

@@ -40,7 +40,7 @@ const AccountCard = props => {
     props.fetchPlayerLaneRole(props.account.account_id)
   }
 
-  if (props.account_cards_loaded === true) {return (
+return (
     <div className="cards-container">
       <div className="card">
         <Paper
@@ -64,9 +64,7 @@ const AccountCard = props => {
           }/>
       </div>
     </div>
-  )} else {
-    return <LoadingScreen />
-  }
+  )
 }
 
   const mapStateToProps = state => {return {
