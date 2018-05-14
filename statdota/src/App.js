@@ -2,7 +2,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-// import { DotLoader } from 'react-spinners';
 // Componenets / Containers / Actions
 import { fetchAccounts } from './actions.js';
 import AccountCard from './Components/AccountCard.js';
