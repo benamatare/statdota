@@ -1,3 +1,5 @@
+# README
+
 Statdota - A platform for Dota 2 enthusiast can go to view, their recent match performance </br>
 Thanks to Opendota.com, Stratz.com, Valve & Dota 2!</br>
 https://www.opendota.com/ | https://stratz.com/en-us/ | http://www.dota2.com/international/battlepass/ </br>
