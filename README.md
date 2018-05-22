@@ -1,13 +1,13 @@
 Statdota - A platform for Dota 2 enthusiast can go to view, their recent match performance </br>
-Thanks to Opendota.com, Stratz.com, Valve & Dota 2!
-https://www.opendota.com/ | https://stratz.com/en-us/ | http://www.dota2.com/international/battlepass/ 
+Thanks to Opendota.com, Stratz.com, Valve & Dota 2!</br>
+https://www.opendota.com/ | https://stratz.com/en-us/ | http://www.dota2.com/international/battlepass/ </br>
 _______________
-Demo -> https://youtu.be/oI93anYGcZE
-Built with ->
-  JavaScript
-  React & Redux
-  Material UI
-  Chart.js
+Demo -> https://youtu.be/oI93anYGcZE</br>
+Built with -></br>
+  JavaScript</br>
+  React & Redux</br>
+  Material UI</br>
+  Chart.js</br>
   
 _______________
 INSTRUCTIONS
