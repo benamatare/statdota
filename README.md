@@ -1,17 +1,16 @@
-# statdota
-Created with <3 at Flatiron School
-Module 5 Final Project
-Ben Matare
-
-Javascript
-React & Redux
-Material UI
-
+Statdota - A platform for Dota 2 enthusiast can go to view, their recent match performance
 Thanks to Opendota.com, Stratz.com, Valve & Dota 2!
-https://www.opendota.com/
-https://stratz.com/en-us/
+https://www.opendota.com/ | https://stratz.com/en-us/ | http://www.dota2.com/international/battlepass/ 
 _______________
-// Instructions
+Demo -> https://youtu.be/oI93anYGcZE
+Built with ->
+  JavaScript
+  React & Redux
+  Material UI
+  Chart.js
+  
+_______________
+INSTRUCTIONS
 1) Fork this repo
 2) Clone and download to your local machine
 3) Navigate to the directory via terminal
