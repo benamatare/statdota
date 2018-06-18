@@ -21,9 +21,6 @@ import { Tabs, Tab } from 'material-ui/Tabs';
 import Slider from 'material-ui/Slider';
 
 const AccountPage = props => {
-  console.log('Props in the AccountPage are ->', props.account )
-
-
     return (
       <div className="account-page">
         <Profile />
@@ -64,14 +61,8 @@ const AccountPage = props => {
             </Tab>
         </Tabs>
       </div>
-    )
-}
+)}
 
-  const mapStateToProps = state => {
-    return {
-      fetch_counter: state.fetch_counter,
-      account: state.account
-    }
-  }
+  const mapStateToProps = state => { return { fetch_counter: state.fetch_counter,account: state.account }}
 
 export default connect(mapStateToProps, null)(AccountPage);

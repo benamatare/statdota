@@ -26,18 +26,19 @@ import LoadingScreen from './LoadingScreen.js';
 import './AccountCard.css';
 
 const AccountCard = props => {
+  var ac_id = props.account.account_id
   const handleClick = e => {
     e.preventDefault()
-    props.setAccountId(props.account.account_id)
-    props.getAccountInfo(props.account.account_id)
-    props.getAccountRecentMatches(props.account.account_id)
-    props.getAccountMatches(props.account.account_id)
-    props.getAccountHeroes(props.account.account_id)
-    props.getAccountWinLoss(props.account.account_id)
-    props.getAccountFriends(props.account.account_id)
-    props.fetchPlayerCardGraph(props.account.account_id)
-    props.fetchPlayerPerformance(props.account.account_id)
-    props.fetchPlayerLaneRole(props.account.account_id)
+    props.setAccountId(ac_id)
+    props.getAccountInfo(ac_id)
+    props.getAccountRecentMatches(ac_id)
+    props.getAccountMatches(ac_id)
+    props.getAccountHeroes(ac_id)
+    props.getAccountWinLoss(ac_id)
+    props.getAccountFriends(ac_id)
+    props.fetchPlayerCardGraph(ac_id)
+    props.fetchPlayerPerformance(ac_id)
+    props.fetchPlayerLaneRole(ac_id)
   }
 
 return (
@@ -64,8 +65,7 @@ return (
           }/>
       </div>
     </div>
-  )
-}
+)}
 
   const mapStateToProps = state => {return {
     account_cards_loaded: state.account_cards_loaded,
