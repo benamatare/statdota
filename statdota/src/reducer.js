@@ -2,20 +2,14 @@
   const defaultState = {
     account_query: "",
     fetch_counter: 0,
-
     filler: null,
     live: [],
     loaded: false,
-
     accounts: [],
-
     match_id: null,
     match: null,
-
     account_cards_loaded: false,
     account_card_clicked: false,
-
-
     account: {
       account_lane_roles: null,
       account_card_graph: null,

@@ -30,5 +30,3 @@ ReactDOM.render(
     </Provider>
   </MuiThemeProvider>, document.getElementById('root'));
 registerServiceWorker();
-
-store.dispatch({ type: '@@INIT' });

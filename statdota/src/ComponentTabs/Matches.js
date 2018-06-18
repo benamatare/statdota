@@ -65,11 +65,12 @@ render() {
       <div className="outside-container">
         <div className="inner-container">
           <Table
-            style={{overflow: 'hidden'}}
+            style={{overflow: 'hidden', backgroundColor: '#212121'}}
             className="edit-me"
             selectable={false}
             multiSelectable={false}>
           <TableHeader
+            className="edit-me"
             displaySelectAll={false}
             adjustForCheckbox={false}
             enableSelectAll={false}
@@ -78,7 +79,7 @@ render() {
               textTransform:'uppercase',
               fontWeight: 500
             }}>
-            <TableRow className="table-row-header">
+            <TableRow className="edit-me">
               <TableHeaderColumn className="matches-header" tooltip="Hero played, what team & lane" tooltipStyle={{top: -5}}>
                 <div className="header-info-small" style={{fontSize: 12}}> Hero </div>
               </TableHeaderColumn>

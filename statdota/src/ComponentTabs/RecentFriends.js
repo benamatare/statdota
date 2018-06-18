@@ -27,6 +27,7 @@ const RecentFriends = props => {
             selectable={false}
             multiSelectable={false}>
           <TableHeader
+            className="edit-me"
             displaySelectAll={false}
             adjustForCheckbox={false}
             enableSelectAll={false}

@@ -51,7 +51,8 @@ const RecentMatches = props => {
             selectable={false}
             multiSelectable={false}>
           <TableHeader
-            className="edit-me-header"
+            className="edit-me"
+            // className="edit-me-header"
             displaySelectAll={false}
             adjustForCheckbox={false}
             enableSelectAll={false}
