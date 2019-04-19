@@ -1,0 +1,222 @@
+{
+  "0": {
+    "name": "Not Calibrated",
+    "rank_icon":"https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_0.png",
+    "rank_stars": ""
+  },
+  "10": {
+    "name": "Herald[0]",
+    "rank_icon":"https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_1.png",
+    "rank_stars": ""
+  },
+  "11": {
+    "name": "Herald[1]",
+    "rank_icon":"https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_1.png",
+    "rank_stars": "https://www.opendota.com/assets/images/dota2/rank_icons/rank_star_1.png"
+  },
+  "12": {
+    "name": "Herald[2]",
+    "rank_icon":"https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_1.png",
+    "rank_stars": "https://www.opendota.com/assets/images/dota2/rank_icons/rank_star_2.png"
+  },
+  "13": {
+    "name": "Herald[3]",
+    "rank_icon":"https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_1.png",
+    "rank_stars": "https://www.opendota.com/assets/images/dota2/rank_icons/rank_star_3.png"
+  },
+  "14": {
+    "name": "Herald[4]",
+    "rank_icon":"https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_1.png",
+    "rank_stars": "https://www.opendota.com/assets/images/dota2/rank_icons/rank_star_4.png"
+  },
+  "15": {
+    "name": "Herald[5]",
+    "rank_icon":"https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_1.png",
+    "rank_stars": "https://www.opendota.com/assets/images/dota2/rank_icons/rank_star_5.png"
+  },
+  "10": {
+    "name": "Guardian[0]",
+    "rank_icon":"https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_2.png",
+    "rank_stars": ""
+  },
+  "21": {
+    "name": "Guardian[1]",
+    "rank_icon":"https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_2.png",
+    "rank_stars": "https://www.opendota.com/assets/images/dota2/rank_icons/rank_star_1.png"
+  },
+  "22": {
+    "name": "Guardian[2]",
+    "rank_icon":"https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_2.png",
+    "rank_stars": "https://www.opendota.com/assets/images/dota2/rank_icons/rank_star_2.png"
+  },
+  "23": {
+    "name": "Guardian[3]",
+    "rank_icon":"https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_2.png",
+    "rank_stars": "https://www.opendota.com/assets/images/dota2/rank_icons/rank_star_3.png"
+  },
+  "24": {
+    "name": "Guardian[4]",
+    "rank_icon":"https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_2.png",
+    "rank_stars": "https://www.opendota.com/assets/images/dota2/rank_icons/rank_star_4.png"
+  },
+  "25": {
+    "name": "Guardian[5]",
+    "rank_icon":"https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_2.png",
+    "rank_stars": "https://www.opendota.com/assets/images/dota2/rank_icons/rank_star_5.png"
+  },
+  "30": {
+    "name": "Crusader[0]",
+    "rank_icon":"https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_3.png",
+    "rank_stars": ""
+  },
+  "31": {
+    "name": "Crusader[1]",
+    "rank_icon":"https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_3.png",
+    "rank_stars": "https://www.opendota.com/assets/images/dota2/rank_icons/rank_star_1.png"
+  },
+  "32": {
+    "name": "Crusader[2]",
+    "rank_icon":"https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_3.png",
+    "rank_stars": "https://www.opendota.com/assets/images/dota2/rank_icons/rank_star_2.png"
+  },
+  "33": {
+    "name": "Crusader[3]",
+    "rank_icon":"https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_3.png",
+    "rank_stars": "https://www.opendota.com/assets/images/dota2/rank_icons/rank_star_3.png"
+  },
+  "34": {
+    "name": "Crusader[4]",
+    "rank_icon":"https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_3.png",
+    "rank_stars": "https://www.opendota.com/assets/images/dota2/rank_icons/rank_star_4.png"
+  },
+  "35": {
+    "name": "Crusader[5]",
+    "rank_icon":"https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_3.png",
+    "rank_stars": "https://www.opendota.com/assets/images/dota2/rank_icons/rank_star_5.png"
+  },
+  "40": {
+    "name": "Archon[0]",
+    "rank_icon":"https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_4.png",
+    "rank_stars": ""
+  },
+  "41": {
+    "name": "Archon[1]",
+    "rank_icon":"https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_4.png",
+    "rank_stars": "https://www.opendota.com/assets/images/dota2/rank_icons/rank_star_1.png"
+  },
+  "42": {
+    "name": "Archon[2]",
+    "rank_icon":"https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_4.png",
+    "rank_stars": "https://www.opendota.com/assets/images/dota2/rank_icons/rank_star_2.png"
+  },
+  "43": {
+    "name": "Archon[3]",
+    "rank_icon":"https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_4.png",
+    "rank_stars": "https://www.opendota.com/assets/images/dota2/rank_icons/rank_star_3.png"
+  },
+  "44": {
+    "name": "Archon[4]",
+    "rank_icon":"https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_4.png",
+    "rank_stars": "https://www.opendota.com/assets/images/dota2/rank_icons/rank_star_4.png"
+  },
+  "45": {
+    "name": "Archon[5]",
+    "rank_icon":"https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_4.png",
+    "rank_stars": "https://www.opendota.com/assets/images/dota2/rank_icons/rank_star_5.png"
+  },
+  "50": {
+    "name": "Legend[0]",
+    "rank_icon":"https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_5.png",
+    "rank_stars": ""
+  },
+  "51": {
+    "name": "Legend[1]",
+    "rank_icon":"https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_5.png",
+    "rank_stars": "https://www.opendota.com/assets/images/dota2/rank_icons/rank_star_1.png"
+  },
+  "52": {
+    "name": "Legend[2]",
+    "rank_icon":"https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_5.png",
+    "rank_stars": "https://www.opendota.com/assets/images/dota2/rank_icons/rank_star_2.png"
+  },
+  "53": {
+    "name": "Legend[3]",
+    "rank_icon":"https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_5.png",
+    "rank_stars": "https://www.opendota.com/assets/images/dota2/rank_icons/rank_star_3.png"
+  },
+  "54": {
+    "name": "Legend[4]",
+    "rank_icon":"https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_5.png",
+    "rank_stars": "https://www.opendota.com/assets/images/dota2/rank_icons/rank_star_4.png"
+  },
+  "55": {
+    "name": "Legend[5]",
+    "rank_icon":"https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_5.png",
+    "rank_stars": "https://www.opendota.com/assets/images/dota2/rank_icons/rank_star_5.png"
+  },
+  "60": {
+    "name": "Ancient[0]",
+    "rank_icon":"https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_6.png",
+    "rank_stars": ""
+  },
+  "61": {
+    "name": "Ancient[1]",
+    "rank_icon":"https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_6.png",
+    "rank_stars": "https://www.opendota.com/assets/images/dota2/rank_icons/rank_star_1.png"
+  },
+  "62": {
+    "name": "Ancient[2]",
+    "rank_icon":"https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_6.png",
+    "rank_stars": "https://www.opendota.com/assets/images/dota2/rank_icons/rank_star_2.png"
+  },
+  "63": {
+    "name": "Ancient[3]",
+    "rank_icon":"https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_6.png",
+    "rank_stars": "https://www.opendota.com/assets/images/dota2/rank_icons/rank_star_3.png"
+  },
+  "64": {
+    "name": "Ancient[4]",
+    "rank_icon":"https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_6.png",
+    "rank_stars": "https://www.opendota.com/assets/images/dota2/rank_icons/rank_star_4.png"
+  },
+  "65": {
+    "name": "Ancient[5]",
+    "rank_icon":"https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_6.png",
+    "rank_stars": "https://www.opendota.com/assets/images/dota2/rank_icons/rank_star_5.png"
+  },
+  "70": {
+    "name": "Divine[0]",
+    "rank_icon":"https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_7.png",
+    "rank_stars": ""
+  },
+  "71": {
+    "name": "Divine[1]",
+    "rank_icon":"https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_7.png",
+    "rank_stars": "https://www.opendota.com/assets/images/dota2/rank_icons/rank_star_1.png"
+  },
+  "72": {
+    "name": "Divine[2]",
+    "rank_icon":"https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_7.png",
+    "rank_stars": "https://www.opendota.com/assets/images/dota2/rank_icons/rank_star_2.png"
+  },
+  "73": {
+    "name": "Divine[3]",
+    "rank_icon":"https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_7.png",
+    "rank_stars": "https://www.opendota.com/assets/images/dota2/rank_icons/rank_star_3.png"
+  },
+  "74": {
+    "name": "Divine[4]",
+    "rank_icon":"https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_7.png",
+    "rank_stars": "https://www.opendota.com/assets/images/dota2/rank_icons/rank_star_4.png"
+  },
+  "75": {
+    "name": "Divine[5]",
+    "rank_icon":"https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_7a.png",
+    "rank_stars": ""
+  },
+  "76": {
+    "name": "Divine[5]",
+    "rank_icon":"https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_7b.png",
+    "rank_stars": ""
+  }
+}

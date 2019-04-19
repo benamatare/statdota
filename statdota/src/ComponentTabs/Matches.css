@@ -1,0 +1,127 @@
+.img-text-container {
+  display: flex;
+  position: relative;
+  height: 100%;
+  align-items: center;
+  /* padding-left: 24px; */
+  /* padding-right: 8px; */
+}
+
+.hero-image {
+  margin-right: 5px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
+
+.hero-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.2;
+  width: 125px;
+  /* text-align: right; */
+}
+
+.header-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-space-between;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+
+.header-info-small {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-space-between;
+  text-align: right;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.outside-container {
+  min-width: 100%;
+  clear: both;
+  overflow: hidden !important;
+}
+
+.inner-container {
+  display: block;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  /* width: 400px; */
+}
+
+.header-text {
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.outer-container {
+  display: block;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+.edit-me {
+  table-layout: auto !important;
+  /* margin-bottom: 20px; */
+}
+
+.match-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.2;
+  width: 125px;
+}
+
+.match-result {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.2;
+  width: 125px;
+}
+
+.match-duration {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.2;
+  width: 125px;
+}
+
+.matches-header {
+  color: #ffffff !important;
+  height: 30px !important;
+  font-weight: 400 !important;
+
+}
+
+.table-row-header {
+  background-color: #252525 !important;
+}
+
+.table-row {
+  border-bottom: 3px solid rgb(37,37,37) !important;
+}
+
+
+tr:nth-child(odd) {
+  background: #212121
+};
+tr:nth-child(even) {
+  background: #1f1f1f}
+  ;

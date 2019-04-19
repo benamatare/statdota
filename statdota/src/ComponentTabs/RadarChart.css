@@ -1,0 +1,41 @@
+
+
+.charts-container {
+  padding-top: 40px;
+  margin: auto;
+  justify-content: center;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.kda-radar {
+  width:auto;
+  height: auto;
+}
+
+.gpm-xpm-lhpm-radar {
+  width: auto;
+  height: auto;
+}
+
+.header {
+  margin-top: 22px;
+  text-align: center;
+  font-weight: 400;
+  font-size: 31px;
+  font-family: Roboto, sans-serif;
+  color: #E2E2E2;
+}
+.header2 {
+  margin-top: 22px;
+  text-align: center;
+  font-weight: 400;
+  font-family: Roboto, sans-serif;
+  color: #E2E2E2;
+}
+.subheader {
+  font-size: 14px;
+  text-align: center;
+  color: #E2E2E2;
+  margin-bottom: 22px;
+}

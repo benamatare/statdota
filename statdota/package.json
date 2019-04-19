@@ -3,14 +3,48 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@blueprintjs/core": "^2.2.1",
+    "antd": "^3.4.4",
+    "chart.js": "^2.7.2",
+    "grommet": "^1.10.1",
+    "gulp": "^3.9.1",
+    "lodash": "^4.17.10",
+    "lodash.orderby": "^4.6.0",
+    "material-design-icons": "^3.0.1",
+    "material-ui": "^0.20.0",
+    "material-ui-datatables": "^0.18.2",
+    "material-ui-search-bar": "^0.4.1",
+    "moment": "^2.22.1",
+    "onsenui": "^2.9.2",
     "react": "^16.3.2",
+    "react-chartjs-2": "^2.7.2",
     "react-dom": "^16.3.2",
-    "react-scripts": "1.1.4"
+    "react-onsenui": "^1.10.0",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.4",
+    "react-spinkit": "^3.0.0",
+    "react-spinners": "^0.3.2",
+    "react-timeago": "^4.1.9",
+    "redux-thunk": "^2.2.0",
+    "sugar": "^2.0.4",
+    "sugar-js": "^1.4.0",
+    "typeface-roboto": "0.0.54"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "devDependencies": {
+    "babel-plugin-import": "^1.7.0",
+    "css-loader": "^0.28.11",
+    "gh-pages": "^1.2.0",
+    "less-loader": "^4.1.0",
+    "less-vars-to-js": "^1.2.1",
+    "style-loader": "^0.21.0"
   }
 }
