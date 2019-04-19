@@ -1,5 +1,7 @@
 # Work in progress will update as features are completed
 
+Currently broken =(, V2 is in the works :) 
+
 Search a player, select a player, see their stats
 
 Thanks to Opendota, Steam, Valve, Dota 2, & Stratz!
